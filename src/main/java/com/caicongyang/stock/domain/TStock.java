@@ -59,7 +59,7 @@ public class TStock implements Serializable {
     private Double preClose;
 
     @ApiModelProperty(value = "涨跌点")
-    private Double change;
+    private Double chg;
 
     @ApiModelProperty(value = "涨跌幅（%）")
     private Double pctChg;
