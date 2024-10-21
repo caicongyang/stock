@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>tom.cai选股助手之异动etf</title>
+    <title>tom.cai选股助手之异动ETF</title>
     <!-- meta使用viewport以确保页面可自由缩放 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -27,56 +27,43 @@
           overflow-x: scroll;
         }
     </style>
-    <script>
-        /**
-         * [通过参数名获取url中的参数值]
-         * 示例URL:http://htmlJsTest/getrequest.html?uid=admin&rid=1&fid=2&name=小明
-         * @param  {[string]} queryName [参数名]
-         * @return {[string]}           [参数值]
-         */
-        function GetQueryValue(queryName) {
-            var query = decodeURI(window.location.search.substring(1));
-            var vars = query.split("&");
-            for (var i = 0; i < vars.length; i++) {
-                var pair = vars[i].split("=");
-                if (pair[0] == queryName) {
-                    return pair[1];
-                }
-            }
-            return null;
-        }
-    </script>
+    <script src="sidebar.js"></script>
 </head>
 <body>
+<div data-role="page">
+    <div data-role="panel" id="sidebar" data-position="left" data-display="overlay">
+        <!-- 侧边栏内容将由 sidebar.js 填充 -->
+    </div>
 
-<div data-role="header">
-    <h1 id="titleData"></h1>
+    <div data-role="header">
+        <h1 id="titleData"></h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <div class="ui-content">
+            <input type="text" id="queryDate">
+            <input type="button" data-inline="true" value="查询" onclick="query()">
+        </div>
+        <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable">
+            <thead>
+            <tr>
+                <th data-priority="1">ETF代码</th>
+                <th data-priority="2">ETF名称</th>
+                <th data-priority="3">涨跌幅</th>
+                <th data-priority="4">成交额</th>
+                <th data-priority="5">成交额比率</th>
+            </tr>
+            </thead>
+            <tbody id="tbodydata">
+            </tbody>
+        </table>
+    </div>
+
+    <div data-role="footer">
+        <h1>股市有风险，入市需谨慎</h1>
+    </div>
 </div>
 
-<div data-role="main" class="ui-content">
-
-
-    <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable">
-        <thead>
-        <tr>
-            <th data-priority="1">股票</th>
-          <th data-priority="2">名称</th>
-          <th data-priority="4">lastDayCompare</th>
-          <th data-priority="5">meanRatio</th>
-        </tr>
-        </thead>
-        <tbody id="tbodydata">
-
-        </tbody>
-    </table>
-</div>
-
-<div data-role="footer">
-    <h1>股市有风险，入市需谨慎</h1>
-</div>
-
-
-</body>
 <script>
     $(document).ready(function () {
         var dayStr = GetQueryValue('day');
@@ -85,29 +72,26 @@
             day.setTime(day.getTime());
             dayStr = day.getFullYear() + "-" + (day.getMonth() + 1) + "-" + day.getDate();
         }
-        $.get("/t-etf/getTransactionEtfData",
+        $.get("/stock/getAbnormalEtf",
             {
-                currentDate: dayStr
+                tradingDay: dayStr
             },
             function (data, status) {
                 if (data.code == 0) {
-                    optionJson = data.data;
+                    var optionJson = data.data;
                     var html = "";
                     if (optionJson.length > 0) {
                         for (var i = 0; i < optionJson.length; i++) {
-                          var url = "https://m.10jqka.com.cn/stockpage/hs_"
-                              + optionJson[i].stockCode.split(".")[0] + "/#&atab=geguNews";
-                          html += "<tr>";
-                          html += "<td><a href=" + url + " target='_blank'>"
-                              + optionJson[i].stockCode.split(
-                                  ".")[0]
-                              + "</a></td>";
-                            html += "<td>" + optionJson[i].stockName + "</td>";
-                            html += "<td>" + optionJson[i].lastDayCompare + "</td>";
-                            html += "<td>" + optionJson[i].meanRatio + "</td>";
+                            var url = "https://m.10jqka.com.cn/stockpage/hs_" + optionJson[i].etfCode + "/#&atab=geguNews";
+                            html += "<tr>";
+                            html += "<td><a href='" + url + "' target='_blank'>" + optionJson[i].etfCode + "</a></td>";
+                            html += "<td>" + optionJson[i].etfName + "</td>";
+                            html += "<td>" + toPercent(optionJson[i].changePercent) + "</td>";
+                            html += "<td>" + optionJson[i].volume + "</td>";
+                            html += "<td>" + toPercent(optionJson[i].volumeRate) + "</td>";
                             html += "</tr>";
                         }
-                        $("#titleData").append(optionJson[0].tradingDay + "异动etf");
+                        $("#titleData").text(optionJson[0].tradingDay + "异动ETF列表");
                     }
                     $("#tbodydata").html(html);
                 } else {
@@ -115,5 +99,60 @@
                 }
             });
     });
+
+    function query() {
+        var queryDate = $("#queryDate").val();
+        window.location.href = "abnormal-etf.html?day=" + queryDate;
+    }
+
+    function GetQueryValue(queryName) {
+        var query = decodeURI(window.location.search.substring(1));
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == queryName) {
+                return pair[1];
+            }
+        }
+        return null;
+    }
+
+    function toPercent(point){
+        var str=Number(point*100).toFixed(1);
+        str+="%";
+        return str;
+    }
+
+    $(document).on("pagecreate", function() {
+        $("#sidebar").panel();
+    });
+
+    $(document).ready(function() {
+        // 创建侧边栏内容
+        var sidebarContent = `
+            <h2>导航菜单</h2>
+            <ul data-role="listview">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="Strategy.html">总策略</a></li>
+                <li><a href="abnormal-stock.html">异动股票</a></li>
+                <!-- 添加更多菜单项 -->
+            </ul>
+        `;
+
+        // 将侧边栏内容添加到页面
+        $("#sidebar").html(sidebarContent);
+
+        // 在每个页面的 header 中添加打开侧边栏的按钮
+        $("[data-role='header']").prepend('<a href="#sidebar" class="ui-btn ui-icon-bars ui-btn-icon-notext">打开菜单</a>');
+
+        // 初始化侧边栏
+        $("#sidebar").panel();
+    });
+
+    $(document).on("pagecreate", function() {
+        // 重新初始化侧边栏
+        $("#sidebar").panel();
+    });
 </script>
+</body>
 </html>

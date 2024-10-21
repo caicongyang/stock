@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面1</title>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="sidebar.js"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header">
+            <h1>页面1</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <h2>页面1内容</h2>
+            <p>这是页面1的主要内容。</p>
+        </div>
+
+        <div data-role="footer">
+            <h4>页面1底部</h4>
+        </div>
+    </div>
+    <!-- 在 body 标签结束前添加以下脚本 -->
+    <script>
+      // 在页面加载时恢复菜单状态
+      document.addEventListener('DOMContentLoaded', () => {
+        const menu = document.querySelector('.left-menu');
+        const toggleButton = document.querySelector('.menu-toggle');
+        const savedState = localStorage.getItem('menuState');
+        
+        if (savedState === 'open') {
+          menu.classList.add('open');
+        }
+
+        // 为菜单切换按钮添加点击事件
+        toggleButton.addEventListener('click', () => {
+          menu.classList.toggle('open');
+          localStorage.setItem('menuState', menu.classList.contains('open') ? 'open' : 'closed');
+        });
+      });
+    </script>
+</body>
+</html>

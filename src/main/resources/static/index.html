@@ -16,6 +16,8 @@
   <!-- 引入 jQuery Mobile 库 -->
   <script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
+  <!-- 引入侧边栏脚本 -->
+  <script src="sidebar.js"></script>
 
 </head>
 <body>
@@ -29,54 +31,69 @@
   <h2>日内股票数据</h2>
 
   <ul data-role="listview" data-inset="true">
-    <li><a href="volumeGtYesterday-stock.html" target='_blank'>成交量大于昨天（中午12点更新）</a></li>
+    <li><a href="volumeGtYesterday-stock.html">成交量大于昨天（中午12点更新）</a></li>
   </ul>
 
   <h2>日级别股票数据</h2>
 
   <ul data-role="listview" data-inset="true">
-    <li><a href="Strategy.html" target='_blank'>总策略</a></li>
-    <li><a href="higher-stock.html" target='_blank'>创新高股票</a></li>
-    <li><a href="abnormal-stock.html" target='_blank'>异动股票</a></li>
-    <li><a href="abnormal-stock-Interval.html" target='_blank'>异动股票区间</a></li>
-    <li><a href="breakthrough-platform.html" target='_blank'>突破平台</a></li>
-    <li><a href="limit-stock-Interval.html" target='_blank'>涨停股票区间</a></li>
-    <li><a href="limit-abnormal-stock.html" target='_blank'>当日涨停&30日内异动</a></li>
-    <li><a href="abnormal-limit-stock.html" target='_blank'>当日异动&30日内涨停股票</a></li>
-
-
-
-
-
-
+    <li><a href="Strategy.html">总策略</a></li>
+    <li><a href="higher-stock.html">创新高股票</a></li>
+    <li><a href="abnormal-stock.html">异动股票</a></li>
+    <li><a href="abnormal-stock-Interval.html">异动股票区间</a></li>
+    <li><a href="breakthrough-platform.html">突破平台</a></li>
+    <li><a href="limit-stock-Interval.html">涨停股票区间</a></li>
+    <li><a href="limit-abnormal-stock.html">当日涨停&30日内异动</a></li>
+    <li><a href="abnormal-limit-stock.html">当日异动&30日内涨停股票</a></li>
   </ul>
 
   <h2>周级别股票数据</h2>
 
   <ul data-role="listview" data-inset="true">
-    <li><a href="week-higher-stock.html" target='_blank'>周级别创新高股票</a></li>
-    <li><a href="week-volume-rate-sort-stock.html" target='_blank'>周级别成交额比率倒序排名</a></li>
-
-
+    <li><a href="week-higher-stock.html">周级别创新高股票</a></li>
+    <li><a href="week-volume-rate-sort-stock.html">周级别成交额比率倒序排名</a></li>
   </ul>
 
   <h2>etf</h2>
 
   <ul data-role="listview" data-inset="true">
-    <li><a href="abnormal-etf.html" target='_blank'>异动etf</a></li>
-    <li><a href="volume-rate-sort-etf.html" target='_blank'>异动etf成交额比率倒序排名</a></li>
-    <li><a href="higher-etf.html" target='_blank'> 创新高etf</a></li>
-
+    <li><a href="abnormal-etf.html">异动etf</a></li>
+    <li><a href="volume-rate-sort-etf.html">异动etf成交额比率倒序排名</a></li>
+    <li><a href="higher-etf.html"> 创新高etf</a></li>
+    <li><a href="page1.html"> page1</a></li>
   </ul>
 
-
   <div data-role="footer">
-  <h1>股市有风险，入市需谨慎</h1>
-  <h1>测试数据，仅限娱乐</h1>
-
+    <h1>股市有风险，入市需谨慎</h1>
+    <h1>测试数据，仅限娱乐</h1>
   </div>
 </div>
 
+<!-- 在 body 标签结束前添加以下脚本 -->
+<script>
+  // 保存菜单状态
+  function saveMenuState() {
+    const menu = document.querySelector('.left-menu');
+    const isOpen = menu.classList.contains('open');
+    localStorage.setItem('menuState', isOpen ? 'open' : 'closed');
+  }
+
+  // 为菜单切换按钮添加点击事件
+  const toggleButton = document.querySelector('.menu-toggle');
+  toggleButton.addEventListener('click', () => {
+    // 在切换菜单后保存状态
+    setTimeout(saveMenuState, 0);
+  });
+
+  // 在页面加载时恢复菜单状态
+  document.addEventListener('DOMContentLoaded', () => {
+    const menu = document.querySelector('.left-menu');
+    const savedState = localStorage.getItem('menuState');
+    if (savedState === 'open') {
+      menu.classList.add('open');
+    }
+  });
+</script>
 
 </body>
 </html>

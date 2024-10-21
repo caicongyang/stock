@@ -2,50 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>tom.cai选股助手之etf成交额的比率倒序排名</title>
-    <!-- meta使用viewport以确保页面可自由缩放 -->
+    <title>tom.cai选股助手之异动ETF成交额比率倒序排名</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- 引入 jQuery Mobile 样式 -->
     <link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
-
-    <!-- 引入 jQuery 库 -->
     <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-
-    <!-- 引入 jQuery Mobile 库 -->
     <script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <style>
-        th {
-            border-bottom: 1px solid #d6d6d6;
-        }
-
-        tr:nth-child(even) {
-            background: #e9e9e9;
-        }
-
-        .ui-content {
-            overflow-x: scroll;
-        }
+        th { border-bottom: 1px solid #d6d6d6; }
+        tr:nth-child(even) { background: #e9e9e9; }
+        .ui-content { overflow-x: scroll; }
     </style>
-    <script>
-        /**
-         * [通过参数名获取url中的参数值]
-         * 示例URL:http://htmlJsTest/getrequest.html?uid=admin&rid=1&fid=2&name=小明
-         * @param  {[string]} queryName [参数名]
-         * @return {[string]}           [参数值]
-         */
-        function GetQueryValue(queryName) {
-            var query = decodeURI(window.location.search.substring(1));
-            var vars = query.split("&");
-            for (var i = 0; i < vars.length; i++) {
-                var pair = vars[i].split("=");
-                if (pair[0] == queryName) {
-                    return pair[1];
-                }
-            }
-            return null;
-        }
-    </script>
+    <script src="sidebar.js"></script>
 </head>
 <body>
 
@@ -54,18 +21,17 @@
 </div>
 
 <div data-role="main" class="ui-content">
-
-
     <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable">
         <thead>
         <tr>
-            <th data-priority="1">股票</th>
-            <th data-priority="2">名称</th>
-            <th data-priority="4">lastDayCompare</th>
+            <th data-priority="1">ETF代码</th>
+            <th data-priority="2">ETF名称</th>
+            <th data-priority="3">涨跌幅</th>
+            <th data-priority="4">成交额</th>
+            <th data-priority="5">成交额比率</th>
         </tr>
         </thead>
         <tbody id="tbodydata">
-
         </tbody>
     </table>
 </div>
@@ -74,8 +40,6 @@
     <h1>股市有风险，入市需谨慎</h1>
 </div>
 
-
-</body>
 <script>
     $(document).ready(function () {
         var dayStr = GetQueryValue('day');
@@ -84,28 +48,26 @@
             day.setTime(day.getTime());
             dayStr = day.getFullYear() + "-" + (day.getMonth() + 1) + "-" + day.getDate();
         }
-        $.get("/t-etf/querySortEtfStockData",
+        $.get("/stock/getVolumeRateSortEtf",
             {
-                currentDate: dayStr
+                tradingDay: dayStr
             },
             function (data, status) {
                 if (data.code == 0) {
-                    optionJson = data.data;
+                    var optionJson = data.data;
                     var html = "";
                     if (optionJson.length > 0) {
                         for (var i = 0; i < optionJson.length; i++) {
-                          var url = "https://m.10jqka.com.cn/stockpage/hs_"
-                              + optionJson[i].stockCode.split(".")[0] + "/#&atab=geguNews";
-                          html += "<tr>";
-                          html += "<td><a href=" + url + " target='_blank'>"
-                              + optionJson[i].stockCode.split(
-                                  ".")[0]
-                              + "</a></td>";
-                          html += "<td>" + optionJson[i].stockName + "</td>";
-                            html += "<td>" + optionJson[i].lastDayCompare + "</td>";
+                            var url = "https://m.10jqka.com.cn/stockpage/hs_" + optionJson[i].etfCode + "/#&atab=geguNews";
+                            html += "<tr>";
+                            html += "<td><a href='" + url + "' target='_blank'>" + optionJson[i].etfCode + "</a></td>";
+                            html += "<td>" + optionJson[i].etfName + "</td>";
+                            html += "<td>" + toPercent(optionJson[i].changePercent) + "</td>";
+                            html += "<td>" + optionJson[i].volume + "</td>";
+                            html += "<td>" + toPercent(optionJson[i].volumeRate) + "</td>";
                             html += "</tr>";
                         }
-                        $("#titleData").append(optionJson[0].tradingDay + "异动etf排序");
+                        $("#titleData").text(optionJson[0].tradingDay + "异动ETF成交额比率倒序排名");
                     }
                     $("#tbodydata").html(html);
                 } else {
@@ -113,5 +75,24 @@
                 }
             });
     });
+
+    function GetQueryValue(queryName) {
+        var query = decodeURI(window.location.search.substring(1));
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == queryName) {
+                return pair[1];
+            }
+        }
+        return null;
+    }
+
+    function toPercent(point){
+        var str=Number(point*100).toFixed(1);
+        str+="%";
+        return str;
+    }
 </script>
+</body>
 </html>

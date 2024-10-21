@@ -49,12 +49,8 @@
 </head>
 <body>
 
-<div data-role="header">
-    <h1 id="titleData"></h1>
-</div>
-
 <div data-role="main" class="ui-content">
-
+    <h1 id="titleData"></h1>
 
     <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable">
         <thead>
@@ -68,51 +64,32 @@
         </tr>
         </thead>
         <tbody id="tbodydata">
-
         </tbody>
     </table>
 </div>
 
-<div data-role="footer">
-    <h1>股市有风险，入市需谨慎</h1>
-</div>
-
-
-</body>
 <script>
     $(document).ready(function () {
-        var dayStr = GetQueryValue('day');
-        if (dayStr == null || dayStr == undefined || dayStr == '') {
-            var day = new Date();
-            day.setTime(day.getTime());
-            dayStr = day.getFullYear() + "-" + (day.getMonth() + 1) + "-" + day.getDate();
-        }
+        var dayStr = new Date().toISOString().slice(0,10);
         $.get("/stock/getVolumeGtYesterdayStock",
-            {
-                currentDate: dayStr
-            },
+            { currentDate: dayStr },
             function (data, status) {
                 if (data.code == 0) {
-                    optionJson = data.data;
+                    var optionJson = data.data;
                     var html = "";
                     if (optionJson.length > 0) {
                         for (var i = 0; i < optionJson.length; i++) {
-                            //https://m.10jqka.com.cn/stockpage/hs_688001/#&atab=geguNews
-                          var  url = "https://m.10jqka.com.cn/stockpage/hs_"
-                                + optionJson[i].stockCode.split(".")[0]+"/#&atab=geguNews";
-
-                           html += "<tr>";
-                           html += "<td><a href=" + url + " target='_blank\n'>"
-                              + optionJson[i].stockCode.split(".")[0]
-                              + "</a></td>";
-                          html += "<td>" + optionJson[i].stockName + "</td>";
+                            var url = "https://m.10jqka.com.cn/stockpage/hs_" + optionJson[i].stockCode.split(".")[0] + "/#&atab=geguNews";
+                            html += "<tr>";
+                            html += "<td><a href='" + url + "' target='_blank'>" + optionJson[i].stockCode.split(".")[0] + "</a></td>";
+                            html += "<td>" + optionJson[i].stockName + "</td>";
                             html += "<td>" + optionJson[i].counter + "</td>";
                             html += "<td>" + optionJson[i].swL3 + "</td>";
                             html += "<td>" + optionJson[i].jqL2 + "</td>";
                             html += "<td>" + optionJson[i].zjw + "</td>";
                             html += "</tr>";
                         }
-                        $("#titleData").append(optionJson[0].tradingDay + "异动股票");
+                        $("#titleData").text(optionJson[0].tradingDay + "异动股票");
                     }
                     $("#tbodydata").html(html);
                 } else {
@@ -121,4 +98,5 @@
             });
     });
 </script>
+</body>
 </html>
