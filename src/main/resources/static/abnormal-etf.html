@@ -3,38 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>tom.cai选股助手之异动ETF</title>
-    <!-- meta使用viewport以确保页面可自由缩放 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- 引入 jQuery Mobile 样式 -->
     <link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
-
-    <!-- 引入 jQuery 库 -->
     <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-
-    <!-- 引入 jQuery Mobile 库 -->
     <script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <style>
-        th {
-            border-bottom: 1px solid #d6d6d6;
-        }
-
-        tr:nth-child(even) {
-            background: #e9e9e9;
-        }
-
-        .ui-content {
-          overflow-x: scroll;
-        }
-    </style>
-    <script src="sidebar.js"></script>
 </head>
 <body>
-<div data-role="page">
-    <div data-role="panel" id="sidebar" data-position="left" data-display="overlay">
-        <!-- 侧边栏内容将由 sidebar.js 填充 -->
-    </div>
-
+<div data-role="page" id="abnormal-etf">
     <div data-role="header">
         <h1 id="titleData"></h1>
     </div>
@@ -65,7 +40,11 @@
 </div>
 
 <script>
-    $(document).ready(function () {
+    $(document).on("pagecreate", "#abnormal-etf", function() {
+        loadAbnormalEtfData();
+    });
+
+    function loadAbnormalEtfData() {
         var dayStr = GetQueryValue('day');
         if (dayStr == null || dayStr == undefined || dayStr == '') {
             var day = new Date();
@@ -98,11 +77,11 @@
                     alert(data.msg)
                 }
             });
-    });
+    }
 
     function query() {
         var queryDate = $("#queryDate").val();
-        window.location.href = "abnormal-etf.html?day=" + queryDate;
+        window.parent.location.href = "secend.html?page=abnormal-etf.html&day=" + queryDate;
     }
 
     function GetQueryValue(queryName) {
@@ -122,37 +101,6 @@
         str+="%";
         return str;
     }
-
-    $(document).on("pagecreate", function() {
-        $("#sidebar").panel();
-    });
-
-    $(document).ready(function() {
-        // 创建侧边栏内容
-        var sidebarContent = `
-            <h2>导航菜单</h2>
-            <ul data-role="listview">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="Strategy.html">总策略</a></li>
-                <li><a href="abnormal-stock.html">异动股票</a></li>
-                <!-- 添加更多菜单项 -->
-            </ul>
-        `;
-
-        // 将侧边栏内容添加到页面
-        $("#sidebar").html(sidebarContent);
-
-        // 在每个页面的 header 中添加打开侧边栏的按钮
-        $("[data-role='header']").prepend('<a href="#sidebar" class="ui-btn ui-icon-bars ui-btn-icon-notext">打开菜单</a>');
-
-        // 初始化侧边栏
-        $("#sidebar").panel();
-    });
-
-    $(document).on("pagecreate", function() {
-        // 重新初始化侧边栏
-        $("#sidebar").panel();
-    });
 </script>
 </body>
 </html>

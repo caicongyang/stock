@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>tom.cai选股助手之创新高ETF</title>
+  <title>创新高ETF</title>
   <!-- meta使用viewport以确保页面可自由缩放 -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -27,37 +27,57 @@
     .ui-content {
       overflow-x: scroll;
     }
+    #sidebar {
+      width: 250px;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+    [data-role="page"] {
+      margin-left: 250px;
+    }
   </style>
-  <script src="sidebar.js"></script>
 </head>
 <body>
+<div data-role="page" id="higher-etf">
+  <div data-role="header">
+    <h1 id="titleData"></h1>
+  </div>
 
-<div data-role="header">
-  <h1 id="titleData"></h1>
-</div>
+  <div data-role="main" class="ui-content">
+    <div class="ui-content">
+      <input type="text" id="queryDate">
+      <input type="button" data-inline="true" value="查询" onclick="query()">
+    </div>
+    <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable">
+      <thead>
+      <tr>
+        <th data-priority="1">ETF代码</th>
+        <th data-priority="2">ETF名称</th>
+        <th data-priority="3">涨跌幅</th>
+        <th data-priority="4">成交额</th>
+        <th data-priority="5">创新高类型</th>
+      </tr>
+      </thead>
+      <tbody id="tbodydata">
+      </tbody>
+    </table>
+  </div>
 
-<div data-role="main" class="ui-content">
-  <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable">
-    <thead>
-    <tr>
-      <th data-priority="1">ETF代码</th>
-      <th data-priority="2">ETF名称</th>
-      <th data-priority="3">intervalDays</th>
-      <th data-priority="4">previousHighsDate</th>
-      <th data-priority="5">gain</th>
-    </tr>
-    </thead>
-    <tbody id="tbodydata">
-    </tbody>
-  </table>
-</div>
-
-<div data-role="footer">
-  <h1>股市有风险，入市需谨慎</h1>
+  <div data-role="footer">
+    <h1>股市有风险，入市需谨慎</h1>
+  </div>
 </div>
 
 <script>
-  $(document).ready(function () {
+  $(document).on("pagecreate", "#higher-etf", function() {
+    loadHigherEtfData();
+  });
+
+  function loadHigherEtfData() {
     var dayStr = GetQueryValue('day');
     if (dayStr == null || dayStr == undefined || dayStr == '') {
       var day = new Date();
@@ -78,9 +98,9 @@
                 html += "<tr>";
                 html += "<td><a href='" + url + "' target='_blank'>" + optionJson[i].etfCode + "</a></td>";
                 html += "<td>" + optionJson[i].etfName + "</td>";
-                html += "<td>" + optionJson[i].intervalDays + "</td>";
-                html += "<td>" + optionJson[i].previousHighsDate + "</td>";
-                html += "<td>" + toPercent(optionJson[i].gain) + "</td>";
+                html += "<td>" + toPercent(optionJson[i].changePercent) + "</td>";
+                html += "<td>" + optionJson[i].volume + "</td>";
+                html += "<td>" + optionJson[i].higherType + "</td>";
                 html += "</tr>";
               }
               $("#titleData").text(optionJson[0].tradingDay + "创新高ETF列表");
@@ -90,7 +110,12 @@
             alert(data.msg)
           }
         });
-  });
+  }
+
+  function query() {
+    var queryDate = $("#queryDate").val();
+    window.parent.location.href = "secend.html?page=higher-etf.html&day=" + queryDate;
+  }
 
   function GetQueryValue(queryName) {
     var query = decodeURI(window.location.search.substring(1));

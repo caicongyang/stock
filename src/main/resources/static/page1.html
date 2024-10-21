@@ -8,9 +8,23 @@
     <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="sidebar.js"></script>
+    <style>
+        #sidebar {
+            width: 250px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        [data-role="page"] {
+            margin-left: 250px;
+        }
+    </style>
 </head>
 <body>
-    <div data-role="page">
+    <div data-role="page" id="page1">
         <div data-role="header">
             <h1>页面1</h1>
         </div>
@@ -24,24 +38,17 @@
             <h4>页面1底部</h4>
         </div>
     </div>
-    <!-- 在 body 标签结束前添加以下脚本 -->
-    <script>
-      // 在页面加载时恢复菜单状态
-      document.addEventListener('DOMContentLoaded', () => {
-        const menu = document.querySelector('.left-menu');
-        const toggleButton = document.querySelector('.menu-toggle');
-        const savedState = localStorage.getItem('menuState');
-        
-        if (savedState === 'open') {
-          menu.classList.add('open');
-        }
 
-        // 为菜单切换按钮添加点击事件
-        toggleButton.addEventListener('click', () => {
-          menu.classList.toggle('open');
-          localStorage.setItem('menuState', menu.classList.contains('open') ? 'open' : 'closed');
+    <script>
+        $(document).on("pagecreate", "#page1", function() {
+            // 页面特定的 JavaScript 代码
+            console.log("页面1已创建");
         });
-      });
+
+        $(document).on("pageshow", "#page1", function() {
+            // 页面显示时执行的代码
+            console.log("页面1已显示");
+        });
     </script>
 </body>
 </html>
