@@ -1,0 +1,378 @@
+2024-10-21 00:28:07.024[1729441687024] | INFO  | main       | com.caicongyang.stock.Application    - No active profile set, falling back to default profiles: default
+2024-10-21 00:28:08.202[1729441688202] | WARN  | main       | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'commonMapper' and 'com.caicongyang.stock.mapper.CommonMapper' mapperInterface. Bean already defined with the same name!
+2024-10-21 00:28:08.202[1729441688202] | WARN  | main       | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'studentMapper' and 'com.caicongyang.stock.mapper.StudentMapper' mapperInterface. Bean already defined with the same name!
+2024-10-21 00:28:08.202[1729441688202] | WARN  | main       | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TEtfHigherMapper' and 'com.caicongyang.stock.mapper.TEtfHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-21 00:28:08.202[1729441688202] | WARN  | main       | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TEtfMapper' and 'com.caicongyang.stock.mapper.TEtfMapper' mapperInterface. Bean already defined with the same name!
+2024-10-21 00:28:08.202[1729441688202] | WARN  | main       | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockHigherMapper' and 'com.caicongyang.stock.mapper.TStockHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-21 00:28:08.202[1729441688202] | WARN  | main       | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockLimitMapper' and 'com.caicongyang.stock.mapper.TStockLimitMapper' mapperInterface. Bean already defined with the same name!
+2024-10-21 00:28:08.203[1729441688203] | WARN  | main       | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockMainMapper' and 'com.caicongyang.stock.mapper.TStockMainMapper' mapperInterface. Bean already defined with the same name!
+2024-10-21 00:28:08.203[1729441688203] | WARN  | main       | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockMapper' and 'com.caicongyang.stock.mapper.TStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-21 00:28:08.203[1729441688203] | WARN  | main       | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockWeekHigherMapper' and 'com.caicongyang.stock.mapper.TStockWeekHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-21 00:28:08.203[1729441688203] | WARN  | main       | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockWeekMapper' and 'com.caicongyang.stock.mapper.TStockWeekMapper' mapperInterface. Bean already defined with the same name!
+2024-10-21 00:28:08.203[1729441688203] | WARN  | main       | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TTransactionEtfMapper' and 'com.caicongyang.stock.mapper.TTransactionEtfMapper' mapperInterface. Bean already defined with the same name!
+2024-10-21 00:28:08.203[1729441688203] | WARN  | main       | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TTransactionStockMapper' and 'com.caicongyang.stock.mapper.TTransactionStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-21 00:28:08.203[1729441688203] | WARN  | main       | o.m.s.mapper.ClassPathMapperScanner  - No MyBatis mapper was found in '[com.caicongyang.stock.mapper]' package. Please check your configuration.
+2024-10-21 00:28:08.740[1729441688740] | INFO  | main       | o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-10-21 00:28:08.744[1729441688744] | INFO  | main       | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2024-10-21 00:28:08.792[1729441688792] | INFO  | main       | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27ms. Found 0 repository interfaces.
+2024-10-21 00:28:09.270[1729441689270] | INFO  | main       | o.s.cloud.context.scope.GenericScope - BeanFactory id=be37846b-48fa-36f5-bdbe-515391e2cb84
+2024-10-21 00:28:09.866[1729441689866] | INFO  | main       | o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-10-21 00:28:10.935[1729441690935] | INFO  | main       | o.s.b.w.e.tomcat.TomcatWebServer     - Tomcat initialized with port(s): 8888 (http)
+2024-10-21 00:28:10.952[1729441690952] | INFO  | main       | o.a.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-21 00:28:10.953[1729441690953] | INFO  | main       | o.a.catalina.core.StandardService    - Starting service [Tomcat]
+2024-10-21 00:28:10.953[1729441690953] | INFO  | main       | o.a.catalina.core.StandardEngine     - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2024-10-21 00:28:11.104[1729441691104] | INFO  | main       | o.a.c.c.C.[Tomcat].[localhost].[/]   - Initializing Spring embedded WebApplicationContext
+2024-10-21 00:28:11.105[1729441691105] | INFO  | main       | o.s.web.context.ContextLoader        - Root WebApplicationContext: initialization completed in 4046 ms
+2024-10-21 00:28:11.400[1729441691400] | WARN  | main       | c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2024-10-21 00:28:11.400[1729441691400] | INFO  | main       | c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2024-10-21 00:28:11.422[1729441691422] | INFO  | main       | c.n.config.DynamicPropertyFactory    - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@3de88f64
+2024-10-21 00:28:12.003[1729441692003] | INFO  | main       | org.redisson.Version                 - Redisson 3.11.6
+2024-10-21 00:28:17.683[1729441697683] | INFO  | redisson-netty-2-16 | o.r.c.p.MasterPubSubConnectionPool   - 1 connections initialized for 159.138.152.92/159.138.152.92:3373
+2024-10-21 00:28:17.687[1729441697687] | INFO  | redisson-netty-2-19 | o.r.c.pool.MasterConnectionPool      - 24 connections initialized for 159.138.152.92/159.138.152.92:3373
+2024-10-21 00:28:18.054[1729441698054] | INFO  | main       | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Starting...
+2024-10-21 00:28:20.792[1729441700792] | INFO  | main       | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Start completed.
+2024-10-21 00:28:21.016[1729441701016] | WARN  | main       | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TEtfHigher.
+2024-10-21 00:28:21.066[1729441701066] | WARN  | main       | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TEtf.
+2024-10-21 00:28:21.107[1729441701107] | WARN  | main       | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockHigher.
+2024-10-21 00:28:21.147[1729441701147] | WARN  | main       | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockLimit.
+2024-10-21 00:28:21.176[1729441701176] | WARN  | main       | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockMain.
+2024-10-21 00:28:21.209[1729441701209] | WARN  | main       | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStock.
+2024-10-21 00:28:21.253[1729441701253] | WARN  | main       | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockWeekHigher.
+2024-10-21 00:28:21.296[1729441701296] | WARN  | main       | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockWeek.
+2024-10-21 00:28:21.342[1729441701342] | WARN  | main       | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TTransactionEtf.
+2024-10-21 00:28:21.397[1729441701397] | WARN  | main       | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TTransactionStock.
+2024-10-21 00:28:22.042[1729441702042] | INFO  | main       | o.s.s.c.ThreadPoolTaskExecutor       - Initializing ExecutorService 'asyncTaskExecutor'
+2024-10-21 00:28:22.723[1729441702723] | INFO  | main       | o.s.b.a.e.web.EndpointLinksResolver  - Exposing 4 endpoint(s) beneath base path '/actuator'
+2024-10-21 00:28:22.912[1729441702912] | INFO  | main       | s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2024-10-21 00:28:22.956[1729441702956] | WARN  | main       | o.s.c.n.a.ArchaiusAutoConfiguration  - No spring.application.name found, defaulting to 'application'
+2024-10-21 00:28:22.957[1729441702957] | WARN  | main       | c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2024-10-21 00:28:22.957[1729441702957] | INFO  | main       | c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2024-10-21 00:28:23.310[1729441703310] | INFO  | main       | o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2024-10-21 00:28:24.316[1729441704316] | INFO  | main       | o.s.s.c.ThreadPoolTaskScheduler      - Initializing ExecutorService 'taskScheduler'
+2024-10-21 00:28:25.350[1729441705350] | INFO  | main       | o.s.cloud.commons.util.InetUtils     - Cannot determine local hostname
+2024-10-21 00:28:25.463[1729441705463] | INFO  | main       | s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2024-10-21 00:28:25.502[1729441705502] | INFO  | main       | s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2024-10-21 00:28:25.547[1729441705547] | INFO  | main       | s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2024-10-21 00:28:25.949[1729441705949] | INFO  | main       | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: calculateHigherStockUsingGET_1
+2024-10-21 00:28:25.994[1729441705994] | INFO  | main       | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getTransactionStockDataUsingGET_1
+2024-10-21 00:28:26.033[1729441706033] | INFO  | main       | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: setStudentByIdUsingPOST_1
+2024-10-21 00:28:26.065[1729441706065] | INFO  | main       | o.a.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-8888"]
+2024-10-21 00:28:26.089[1729441706089] | INFO  | main       | o.s.b.w.e.tomcat.TomcatWebServer     - Tomcat started on port(s): 8888 (http) with context path ''
+2024-10-21 00:28:27.093[1729441707093] | INFO  | main       | o.s.cloud.commons.util.InetUtils     - Cannot determine local hostname
+2024-10-21 00:28:27.096[1729441707096] | INFO  | main       | com.caicongyang.stock.Application    - Started Application in 43.136 seconds (JVM running for 44.023)
+2024-10-21 00:30:22.585[1729441822585] | INFO  | http-nio-8888-exec-1 | o.a.c.c.C.[Tomcat].[localhost].[/]   - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 00:30:22.585[1729441822585] | INFO  | http-nio-8888-exec-1 | o.s.web.servlet.DispatcherServlet    - Initializing Servlet 'dispatcherServlet'
+2024-10-21 00:30:22.605[1729441822605] | INFO  | http-nio-8888-exec-1 | o.s.web.servlet.DispatcherServlet    - Completed initialization in 20 ms
+2024-10-21 00:30:27.091[1729441827091] | ERROR | http-nio-8888-exec-3 | c.c.c.a.ExceptionControllerAdvice    - 全局异常拦截非捕获异常-
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'stock.t_stock_higher' doesn't exist
+### The error may exist in file [/Users/caicongyang/IdeaProjects/stock/target/classes/mapper/CommonMapper.xml]
+### The error may involve com.caicongyang.stock.mapper.CommonMapper.getBreakthroughPlatform-Inline
+### The error occurred while setting parameters
+### SQL: SELECT  ts.stock_code,  sh.interval_days,  ts.last_day_compare,  ts.mean_ratio,  ts.jq_l2,  ts.zjw,  ts.sw_l3,  ts.trading_day,  ts.gain FROM  t_transaction_stock ts  INNER JOIN t_Stock_Higher sh ON sh.stock_code = ts.stock_code  AND sh.trading_day = ts.trading_day WHERE  ts.trade_date = ?  ORDER BY          sh.interval_days desc
+### Cause: java.sql.SQLSyntaxErrorException: Table 'stock.t_stock_higher' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'stock.t_stock_higher' doesn't exist
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:235)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy132.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:168)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:82)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:61)
+	at com.sun.proxy.$Proxy133.getBreakthroughPlatform(Unknown Source)
+	at com.caicongyang.stock.service.impl.TStockServiceImpl.getBreakthroughPlatform(TStockServiceImpl.java:166)
+	at com.caicongyang.stock.service.impl.TStockServiceImpl$$FastClassBySpringCGLIB$$44a62b40.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:685)
+	at com.caicongyang.stock.service.impl.TStockServiceImpl$$EnhancerBySpringCGLIB$$b9dd3b65.getBreakthroughPlatform(<generated>)
+	at com.caicongyang.stock.controllers.StockController.getBreakthroughPlatform(StockController.java:166)
+	at com.caicongyang.stock.controllers.StockController$$FastClassBySpringCGLIB$$704f5899.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at com.caicongyang.core.aspect.RequestLogAspect.doAround(RequestLogAspect.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:62)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:53)
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:365)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:420)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:345)
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.caicongyang.stock.controllers.StockController$$EnhancerBySpringCGLIB$$4519c4f0.getBreakthroughPlatform(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'stock.t_stock_higher' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 97 common frames omitted
+2024-10-21 00:30:40.602[1729441840602] | ERROR | http-nio-8888-exec-5 | c.c.c.a.ExceptionControllerAdvice    - 全局异常拦截非捕获异常-
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'stock.t_stock_higher' doesn't exist
+### The error may exist in file [/Users/caicongyang/IdeaProjects/stock/target/classes/mapper/CommonMapper.xml]
+### The error may involve com.caicongyang.stock.mapper.CommonMapper.getBreakthroughPlatform-Inline
+### The error occurred while setting parameters
+### SQL: SELECT  ts.stock_code,  sh.interval_days,  ts.last_day_compare,  ts.mean_ratio,  ts.jq_l2,  ts.zjw,  ts.sw_l3,  ts.trading_day,  ts.gain FROM  t_transaction_stock ts  INNER JOIN t_Stock_Higher sh ON sh.stock_code = ts.stock_code  AND sh.trading_day = ts.trading_day WHERE  ts.trade_date = ?  ORDER BY          sh.interval_days desc
+### Cause: java.sql.SQLSyntaxErrorException: Table 'stock.t_stock_higher' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'stock.t_stock_higher' doesn't exist
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:235)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy132.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:168)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:82)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:61)
+	at com.sun.proxy.$Proxy133.getBreakthroughPlatform(Unknown Source)
+	at com.caicongyang.stock.service.impl.TStockServiceImpl.getBreakthroughPlatform(TStockServiceImpl.java:166)
+	at com.caicongyang.stock.service.impl.TStockServiceImpl$$FastClassBySpringCGLIB$$44a62b40.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:685)
+	at com.caicongyang.stock.service.impl.TStockServiceImpl$$EnhancerBySpringCGLIB$$b9dd3b65.getBreakthroughPlatform(<generated>)
+	at com.caicongyang.stock.controllers.StockController.getBreakthroughPlatform(StockController.java:166)
+	at com.caicongyang.stock.controllers.StockController$$FastClassBySpringCGLIB$$704f5899.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at com.caicongyang.core.aspect.RequestLogAspect.doAround(RequestLogAspect.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:62)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:53)
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:365)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:420)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:345)
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.caicongyang.stock.controllers.StockController$$EnhancerBySpringCGLIB$$4519c4f0.getBreakthroughPlatform(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'stock.t_stock_higher' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 97 common frames omitted
+2024-10-21 01:48:22.220[1729446502220] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=1h11m1s297ms).
+2024-10-21 01:49:39.487[1729446579487] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=1m17s267ms).
+2024-10-21 02:00:35.357[1729447235357] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=10m55s870ms).
+2024-10-21 02:38:17.020[1729449497020] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=37m41s663ms).
+2024-10-21 04:00:55.950[1729454455950] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=1h22m38s930ms).
+2024-10-21 04:16:51.546[1729455411546] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s596ms).
+2024-10-21 04:33:16.925[1729456396925] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s363ms).
+2024-10-21 04:49:42.521[1729457382521] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s586ms).
+2024-10-21 05:05:38.152[1729458338152] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s631ms).
+2024-10-21 06:01:04.618[1729461664618] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=54m56s459ms).
+2024-10-21 06:16:59.455[1729462619455] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m54s838ms).
+2024-10-21 06:33:25.021[1729463605021] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s557ms).
+2024-10-21 06:49:50.623[1729464590623] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s596ms).
+2024-10-21 07:05:46.257[1729465546257] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s635ms).
+2024-10-21 07:22:11.730[1729466531730] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s458ms).
+2024-10-21 07:38:07.327[1729467487327] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s597ms).
+2024-10-21 07:54:32.912[1729468472912] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s586ms).
+2024-10-21 08:17:55.217[1729469875217] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=22m52s305ms).
+2024-10-21 08:33:51.739[1729470831739] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m56s522ms).
+2024-10-21 09:03:21.601[1729472601601] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=28m59s867ms).
+2024-10-21 09:19:17.174[1729473557174] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s573ms).
+2024-10-21 09:35:12.706[1729474512706] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s532ms).
+2024-10-21 09:51:38.409[1729475498409] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s621ms).
+2024-10-21 10:19:44.451[1729477184451] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=27m36s17ms).
+2024-10-21 10:36:10.061[1729478170061] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s605ms).
+2024-10-21 10:52:35.659[1729479155659] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s590ms).
+2024-10-21 11:20:41.928[1729480841928] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=28m6s269ms).
+2024-10-21 11:37:07.458[1729481827458] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s546ms).
+2024-10-21 11:53:33.041[1729482813041] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s585ms).
+2024-10-21 12:06:12.761[1729483572761] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=12m39s720ms).
+2024-10-21 12:22:08.359[1729484528359] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s598ms).
+2024-10-21 12:38:03.921[1729485483921] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=15m55s562ms).
+2024-10-21 13:07:37.146[1729487257146] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=29m3s212ms).
+2024-10-21 14:08:33.753[1729490913753] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=1h56s607ms).
+2024-10-21 15:09:32.573[1729494572573] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=1h58s820ms).
+2024-10-21 16:10:34.418[1729498234418] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=1h1m1s845ms).
+2024-10-21 17:11:33.886[1729501893886] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=1h59s468ms).
+2024-10-21 18:12:35.832[1729505555832] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=1h1m1s945ms).
+2024-10-21 18:14:26.774[1729505666774] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=1m50s943ms).
+2024-10-21 19:13:34.477[1729509214477] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=59m7s703ms).
+2024-10-21 20:14:36.030[1729512876030] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=1h1m1s553ms).
+2024-10-21 21:07:00.824[1729516020824] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=52m24s794ms).
+2024-10-21 21:08:17.576[1729516097576] | INFO  | SpringContextShutdownHook | o.s.s.c.ThreadPoolTaskScheduler      - Shutting down ExecutorService 'taskScheduler'
+2024-10-21 21:08:17.587[1729516097587] | INFO  | SpringContextShutdownHook | o.s.s.c.ThreadPoolTaskExecutor       - Shutting down ExecutorService 'asyncTaskExecutor'
+2024-10-21 21:08:19.622[1729516099622] | WARN  | redisson-netty-2-32 | i.n.u.c.SingleThreadEventExecutor    - An event executor terminated with non-empty task queue (1)
+2024-10-21 21:08:19.645[1729516099645] | INFO  | SpringContextShutdownHook | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Shutdown initiated...
+2024-10-21 21:08:19.655[1729516099655] | INFO  | SpringContextShutdownHook | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Shutdown completed.
