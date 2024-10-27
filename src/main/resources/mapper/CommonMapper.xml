@@ -96,10 +96,10 @@ WHERE
 <!--        and s.jq_l2 is not null  and s.sw_l3 is not null and s.zjw is not null-->
 ORDER BY
 	s.trading_day desc,
-    t.counter desc,
-	s.jq_l2 DESC,
-	s.sw_l3 DESC,
-	s.zjw DESC
+    t.counter desc
+<!--	,s.jq_l2 DESC,-->
+<!--	s.sw_l3 DESC,-->
+<!--	s.zjw DESC-->
 
     </select>
 
@@ -147,6 +147,17 @@ WHERE
     ORDER BY
     tf.volume / ts.volume DESC;
     </select>
+
+    <select id="getTransactionAndClose2TenDayAvgStockData" parameterType="java.lang.String"
+            resultType="com.caicongyang.stock.domain.TTransactionStockDTO">
+        select * from t_transaction_stock
+        where stock_code in  (
+        select t1.stock_code from t_stock t1 JOIN t_stock_10day_avg  t2 on t1.stock_code = t2.stock_code and t1.low <![CDATA[ <= ]]>  t2.avg_10day where
+         t1.trade_date = #{currentDate} and  t2.trade_date = #{currentDate} ) ORDER BY trading_day  desc,last_day_compare desc
+    </select>
+
+
+
 
 </mapper>
 

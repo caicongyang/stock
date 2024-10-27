@@ -2,6 +2,7 @@ package com.caicongyang.stock.mapper;
 
 import com.caicongyang.stock.domain.TEtf;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.caicongyang.stock.domain.TTransactionEtf;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.HashMap;
@@ -24,4 +25,5 @@ public interface TEtfMapper extends BaseMapper<TEtf> {
 
     List<Map<String, Object>> catchTransactionEtf(HashMap map);
 
+    List<TTransactionEtf> getTransactionAndClose2TenDayAvgEtfData(String currentDate);
 }

@@ -107,5 +107,12 @@ public class TEtfController {
         etfService.calculateHigherStock(currentDate);
     }
 
+    @GetMapping("/getTransactionAndClose2TenDayAvgEtfData")
+    @ApiOperation(value = "获取前期异动&低于10日均线", notes = "获取前期异动&低于10日均线")
+    public   Result<List<TTransactionEtfDTO>> getTransactionAndClose2TenDayAvgEtfData(
+            @RequestParam(required = false, value = "currentDate") String currentDate)
+            throws ParseException {
+       return Result.ok(etfService.getTransactionAndClose2TenDayAvgEtfData(currentDate));
+    }
 
 }

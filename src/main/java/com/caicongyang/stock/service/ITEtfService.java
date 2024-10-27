@@ -29,4 +29,6 @@ public interface ITEtfService extends IService<TEtf> {
     void calculateHigherStock(String tradingDay) throws ParseException;
 
     List<TEtfHigherDTO> getHigherEtf(String currentDate) throws ParseException, IOException;
+
+    List<TTransactionEtf> getTransactionAndClose2TenDayAvgEtfData(String currentDate);
 }

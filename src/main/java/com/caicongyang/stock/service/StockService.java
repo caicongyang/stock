@@ -43,6 +43,9 @@ public interface StockService {
     List<Map<String, Object>> getIntervalTransactionStockData(String startDate, String endDate);
 
 
+    List<TTransactionStockDTO> getTransactionAndClose2TenDayAvgStockData(String currentDate);
+
+
     /**
      * c.抓取异常股票的版块分布和概念分布
      */

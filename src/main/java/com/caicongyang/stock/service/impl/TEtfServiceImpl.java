@@ -21,11 +21,7 @@ import com.caicongyang.stock.utils.TomDateUtil;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import javax.annotation.Resource;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.BeanUtils;
@@ -204,6 +200,11 @@ public class TEtfServiceImpl extends ServiceImpl<TEtfMapper, TEtf> implements IT
         }
 
         return returnList;
+    }
+
+    @Override
+    public List<TTransactionEtf> getTransactionAndClose2TenDayAvgEtfData(String currentDate) {
+        return tEtfMapper.getTransactionAndClose2TenDayAvgEtfData(currentDate);
     }
 
 

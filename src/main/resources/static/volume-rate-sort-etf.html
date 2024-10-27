@@ -68,7 +68,7 @@
             day.setTime(day.getTime());
             dayStr = day.getFullYear() + "-" + (day.getMonth() + 1) + "-" + day.getDate();
         }
-        $.get("/stock/getVolumeRateSortEtf",
+        $.get("/t-etf/getVolumeRateSortEtf",
             {
                 tradingDay: dayStr
             },

@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>tom.cai选股助手之异动ETF</title>
+    <title>tom.cai选股助手之异动ETF低于10日均线</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
-<div data-role="page" id="abnormal-etf">
+<div data-role="page" id="transaction-close2tendayavg-etf">
     <div data-role="header">
         <h1 id="titleData"></h1>
     </div>
@@ -22,14 +22,11 @@
         <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable">
             <thead>
             <tr>
-                <!--                "lastDayCompare": 2.4818,
-            "meanRatio": 2.0043,
-            "tradingDay": "2024-10-18",-->
                 <th data-priority="1">ETF代码</th>
                 <th data-priority="2">ETF名称</th>
                 <th data-priority="3">lastDayCompare</th>
                 <th data-priority="4">meanRatio</th>
-                <th data-priority="5">成交额比率</th>
+                <th data-priority="5">tradingDay</th>
             </tr>
             </thead>
             <tbody id="tbodydata">
@@ -43,18 +40,18 @@
 </div>
 
 <script>
-    $(document).on("pagecreate", "#abnormal-etf", function() {
-        loadAbnormalEtfData();
+    $(document).on("pagecreate", "#transaction-close2tendayavg-etf", function() {
+        getTransactionAndClose2TenDayAvgEtfData();
     });
 
-    function loadAbnormalEtfData() {
+    function getTransactionAndClose2TenDayAvgEtfData() {
         var dayStr = GetQueryValue('day');
         if (dayStr == null || dayStr == undefined || dayStr == '') {
             var day = new Date();
             day.setTime(day.getTime());
             dayStr = day.getFullYear() + "-" + (day.getMonth() + 1) + "-" + day.getDate();
         }
-        $.get("/t-etf/getTransactionEtfData",
+        $.get("/t-etf/getTransactionAndClose2TenDayAvgEtfData",
             {
                 currentDate: dayStr
             },
@@ -64,13 +61,13 @@
                     var html = "";
                     if (optionJson.length > 0) {
                         for (var i = 0; i < optionJson.length; i++) {
-                            var url = "https://m.10jqka.com.cn/stockpage/hs_" + optionJson[i].etfCode + "/#&atab=geguNews";
+                            var url = "https://m.10jqka.com.cn/stockpage/hs_" + optionJson[i].stockCode.split(".")[0] + "/#&atab=geguNews";
                             html += "<tr>";
                             html += "<td><a href='" + url + "' target='_blank'>" + optionJson[i].stockCode + "</a></td>";
                             html += "<td>" + optionJson[i].stockName + "</td>";
-                            html += "<td>" + toPercent(optionJson[i].changePercent) + "</td>";
-                            html += "<td>" + optionJson[i].volume + "</td>";
-                            html += "<td>" + toPercent(optionJson[i].volumeRate) + "</td>";
+                            html += "<td>" + optionJson[i].lastDayCompare + "</td>";
+                            html += "<td>" + optionJson[i].meanRatio + "</td>";
+                            html += "<td>" + optionJson[i].tradingDay + "</td>";
                             html += "</tr>";
                         }
                         $("#titleData").text(optionJson[0].tradingDay + "异动ETF列表");
@@ -84,7 +81,7 @@
 
     function query() {
         var queryDate = $("#queryDate").val();
-        window.parent.location.href = "secend.html?page=abnormal-etf.html&day=" + queryDate;
+        window.parent.location.href = "secend.html?page=transaction-close2tendayavg-etf.html&day=" + queryDate;
     }
 
     function GetQueryValue(queryName) {

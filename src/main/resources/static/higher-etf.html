@@ -84,7 +84,7 @@
       day.setTime(day.getTime());
       dayStr = day.getFullYear() + "-" + (day.getMonth() + 1) + "-" + day.getDate();
     }
-    $.get("/stock/getHigherEtf",
+    $.get("/t-etf/getHigherEtf",
         {
           tradingDay: dayStr
         },

@@ -64,6 +64,8 @@ public class StockController {
     }
 
 
+
+    @Deprecated
     @GetMapping("/catchTransactionStockData")
     @ApiOperation(value = "捕获当天的股票异动数据", notes = "查询当天的股票异动数据")
     public @ResponseBody
@@ -93,6 +95,25 @@ public class StockController {
             result = stockService.getTransactionStockData(currentDate);
             return Result.ok(result);
         } catch (ParseException e) {
+            logger.error("查询当天的股票异动数据失败", e);
+            e.printStackTrace();
+            return Result.fail(e);
+        }
+    }
+
+    @GetMapping("/getTransactionAndClose2TenDayAvgStockData")
+    @ApiOperation(value = "查询当天的股票异动&数据", notes = "查询当天的股票异动数据")
+    @Cacheable(value = "getTransactionAndClose2TenDayAvgStockData", key = "#currentDate")
+    public @ResponseBody
+    Result<List<TTransactionStockDTO>> getTransactionAndClose2TenDayAvgStockData(
+            @RequestParam(required = false, value = "currentDate") String currentDate)
+            throws Exception {
+
+        List<TTransactionStockDTO> result = null;
+        try {
+            result = stockService.getTransactionAndClose2TenDayAvgStockData(currentDate);
+            return Result.ok(result);
+        } catch (Exception e) {
             logger.error("查询当天的股票异动数据失败", e);
             e.printStackTrace();
             return Result.fail(e);

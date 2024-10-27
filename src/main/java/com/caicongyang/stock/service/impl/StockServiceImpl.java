@@ -146,14 +146,12 @@ public class StockServiceImpl implements StockService {
         TTransactionStock stock = new TTransactionStock();
         stock.setTradingDay(currentDate);
         Wrapper<TTransactionStock> wrapper = new QueryWrapper<>(stock);
-        ((QueryWrapper<TTransactionStock>) wrapper).orderByDesc("jq_l2", "sw_l3", "zjw");
         List<TTransactionStock> reuslt = tTransactionStockMapper.selectList(wrapper);
 
         //如果当天没有，则获取最近一个交易日
         if (CollectionUtils.isEmpty(reuslt)) {
             String lastTradingDate = commonMapper.queryLastTradingDate();
             stock.setTradingDay(lastTradingDate);
-            ((QueryWrapper<TTransactionStock>) wrapper).setEntity(stock).orderByDesc("jq_l2", "sw_l3", "zjw");
             reuslt = tTransactionStockMapper.selectList(wrapper);
         }
 
@@ -176,6 +174,11 @@ public class StockServiceImpl implements StockService {
         param.put("startDate", startDate);
         param.put("endDate", endDate);
         return commonMapper.getIntervalTransactionStockData(param);
+    }
+
+    @Override
+    public List<TTransactionStockDTO> getTransactionAndClose2TenDayAvgStockData(String currentDate) {
+        return commonMapper.getTransactionAndClose2TenDayAvgStockData(currentDate);
     }
 
 

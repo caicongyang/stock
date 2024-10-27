@@ -1,6 +1,8 @@
 package com.caicongyang.stock.mapper;
 
 
+import com.caicongyang.stock.domain.TTransactionStockDTO;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,5 +43,6 @@ public interface CommonMapper {
 
     List<Map<String, Object>> getVolumeGtYesterdayStock(HashMap<String, String> map);
 
+    List<TTransactionStockDTO> getTransactionAndClose2TenDayAvgStockData(String currentDate);
 }
 
