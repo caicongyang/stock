@@ -41,8 +41,6 @@
             <tr>
                 <th data-priority="1">ETF代码</th>
                 <th data-priority="2">ETF名称</th>
-                <th data-priority="3">涨跌幅</th>
-                <th data-priority="4">成交额</th>
                 <th data-priority="5">成交额比率</th>
             </tr>
             </thead>
@@ -78,13 +76,11 @@
                     var html = "";
                     if (optionJson.length > 0) {
                         for (var i = 0; i < optionJson.length; i++) {
-                            var url = "https://m.10jqka.com.cn/stockpage/hs_" + optionJson[i].etfCode + "/#&atab=geguNews";
+                            var url = "https://m.10jqka.com.cn/stockpage/hs_" + optionJson[i].stockCode + "/#&atab=geguNews";
                             html += "<tr>";
-                            html += "<td><a href='" + url + "' target='_blank'>" + optionJson[i].etfCode + "</a></td>";
-                            html += "<td>" + optionJson[i].etfName + "</td>";
-                            html += "<td>" + toPercent(optionJson[i].changePercent) + "</td>";
-                            html += "<td>" + optionJson[i].volume + "</td>";
-                            html += "<td>" + toPercent(optionJson[i].volumeRate) + "</td>";
+                            html += "<td><a href='" + url + "' target='_blank'>" + optionJson[i].stockCode + "</a></td>";
+                            html += "<td>" + optionJson[i].stockName + "</td>";
+                            html += "<td>" + toPercent(optionJson[i].lastDayCompare) + "</td>";
                             html += "</tr>";
                         }
                         $("#titleData").text(optionJson[0].tradingDay + "异动ETF成交额比率倒序排名");

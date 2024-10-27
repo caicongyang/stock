@@ -74,13 +74,19 @@ public class TEtfServiceImpl extends ServiceImpl<TEtfMapper, TEtf> implements IT
         if (CollectionUtils.isEmpty(maps)) {
             //如果当天没有，则获取最近一个交易日
             String lastTradingDate = mapper.queryLastTradingDate();
+            preTradingDate = mapper.queryPreTradingDate(lastTradingDate);
+
             queryMap.put("currentDate", lastTradingDate);
+            queryMap.put("preDate", preTradingDate);
+
             maps = tEtfMapper.querySortEtfStockData(queryMap);
         }
 
         for (Map map : maps) {
             TTransactionEtfDTO item = new TTransactionEtfDTO();
             item.setStockCode((String) map.getOrDefault("stock_code", ""));
+            item.setStockName((String) map.getOrDefault("stock_name", ""));
+
             item.setLastDayCompare(((BigDecimal) map.getOrDefault("last_day_compare", "")).doubleValue());
             item.setTradingDay(currentDate);
             //item.setStockName(itStockMainService.getStockNameByStockCode(item.getStockCode()));

@@ -38,7 +38,7 @@
         FROM
         T_Stock
         WHERE
-        trade_date IN ( SELECT trade_date FROM ( SELECT trade_date FROM T_Stock WHERE stock_code = '000001.SZ' and trade_date <![CDATA[ <= ]]>  #{currentDate}  ORDER BY trade_date DESC LIMIT 6 ) AS t )
+        trade_date IN ( SELECT trade_date FROM ( SELECT trade_date FROM T_Stock WHERE stock_code = '000001' and trade_date <![CDATA[ <= ]]>  #{currentDate}  ORDER BY trade_date DESC LIMIT 6 ) AS t )
         and  trade_date != #{currentDate}
         -- 获取最近4个交易日的交易时间
         GROUP BY
@@ -54,12 +54,12 @@
 
     <!--获取倒数第二个交易日-->
     <select id="queryPreTradingDate" resultType="java.lang.String" parameterType="java.lang.String">
-      SELECT trade_date FROM ( SELECT trade_date FROM T_Stock WHERE stock_code = '000001.SZ' and trade_date <![CDATA[ <= ]]>   #{currentDate} ORDER BY trade_date DESC limit  1,1 ) AS t
+      SELECT trade_date FROM ( SELECT trade_date FROM T_Stock WHERE stock_code = '000001' and trade_date <![CDATA[ <= ]]>   #{currentDate} ORDER BY trade_date DESC limit  1,1 ) AS t
     </select>
 
     <!--获取倒数第二个交易日-->
     <select id="queryTradingDate" resultType="java.lang.String" parameterType="java.lang.String">
-        SELECT trade_date FROM ( SELECT trade_date FROM T_Stock WHERE stock_code = '000001.SZ' and trade_date <![CDATA[ <= ]]>   #{currentDate} ORDER BY trade_date DESC limit  1 ) AS t
+        SELECT trade_date FROM ( SELECT trade_date FROM T_Stock WHERE stock_code = '000001' and trade_date <![CDATA[ <= ]]>   #{currentDate} ORDER BY trade_date DESC limit  1 ) AS t
     </select>
 
 
@@ -75,7 +75,7 @@
     </select>
 
     <select id="queryPreWeekTradingDate" resultType="java.lang.String">
-       SELECT trade_date FROM ( SELECT trade_date FROM T_Stock_Week WHERE stock_code = '000001.SZ' and trade_date <![CDATA[ <= ]]>   #{currentDate} ORDER BY trade_date DESC limit  1,1 ) AS t
+       SELECT trade_date FROM ( SELECT trade_date FROM T_Stock_Week WHERE stock_code = '000001' and trade_date <![CDATA[ <= ]]>   #{currentDate} ORDER BY trade_date DESC limit  1,1 ) AS t
     </select>
 
     <select id="getIntervalTransactionStockData" parameterType="java.util.HashMap" resultType="java.util.HashMap">

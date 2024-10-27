@@ -4,6 +4,7 @@
     <select id="querySortEtfStockData" parameterType="java.util.HashMap" resultType="java.util.HashMap">
         SELECT
         t1.stock_code,
+        t1.stock_name,
         t1.volume / t2.volume AS last_day_compare
         FROM
         t_etf t1

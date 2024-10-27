@@ -4864,3 +4864,1236 @@ org.springframework.web.bind.MissingServletRequestParameterException: Required S
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
 2024-10-27 23:38:08.978[1730043488978] | WARN  | http-nio-8888-exec-8 | o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'currentDate' is not present]
+2024-10-27 23:44:38.592[1730043878592] | INFO  | Thread-10  | o.s.s.c.ThreadPoolTaskScheduler      - Shutting down ExecutorService 'taskScheduler'
+2024-10-27 23:44:38.598[1730043878598] | INFO  | Thread-10  | o.s.s.c.ThreadPoolTaskExecutor       - Shutting down ExecutorService 'asyncTaskExecutor'
+2024-10-27 23:44:38.709[1730043878709] | INFO  | Thread-10  | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Shutdown initiated...
+2024-10-27 23:44:38.715[1730043878715] | INFO  | Thread-10  | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Shutdown completed.
+2024-10-27 23:44:40.622[1730043880622] | INFO  | restartedMain | com.caicongyang.stock.Application    - No active profile set, falling back to default profiles: default
+2024-10-27 23:44:41.155[1730043881155] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-10-27 23:44:41.155[1730043881155] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2024-10-27 23:44:41.184[1730043881184] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28ms. Found 0 repository interfaces.
+2024-10-27 23:44:41.324[1730043881324] | INFO  | restartedMain | o.s.cloud.context.scope.GenericScope - BeanFactory id=3f202e05-54f2-34c3-835c-b24c275c44f2
+2024-10-27 23:44:41.397[1730043881397] | INFO  | restartedMain | o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-10-27 23:44:41.552[1730043881552] | WARN  | restartedMain | o.a.tomcat.util.modeler.Registry     - The MBean registry cannot be disabled because it has already been initialised
+2024-10-27 23:44:41.597[1730043881597] | INFO  | restartedMain | o.s.b.w.e.tomcat.TomcatWebServer     - Tomcat initialized with port(s): 8888 (http)
+2024-10-27 23:44:41.598[1730043881598] | INFO  | restartedMain | o.a.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:44:41.599[1730043881599] | INFO  | restartedMain | o.a.catalina.core.StandardService    - Starting service [Tomcat]
+2024-10-27 23:44:41.599[1730043881599] | INFO  | restartedMain | o.a.catalina.core.StandardEngine     - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2024-10-27 23:44:41.616[1730043881616] | INFO  | restartedMain | o.a.c.c.C.[Tomcat].[localhost].[/]   - Initializing Spring embedded WebApplicationContext
+2024-10-27 23:44:41.617[1730043881617] | INFO  | restartedMain | o.s.web.context.ContextLoader        - Root WebApplicationContext: initialization completed in 990 ms
+2024-10-27 23:44:41.769[1730043881769] | ERROR | restartedMain | o.s.b.w.e.tomcat.TomcatStarter       - Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'servletEndpointRegistrar' defined in class path resource [org/springframework/boot/actuate/autoconfigure/endpoint/web/ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.endpoint.web.ServletEndpointRegistrar]: Factory method 'servletEndpointRegistrar' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'healthEndpoint' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Unsatisfied dependency expressed through method 'healthEndpoint' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthContributorRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.health.HealthContributorRegistry]: Factory method 'healthContributorRegistry' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthContributorAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2024-10-27 23:44:41.771[1730043881771] | INFO  | restartedMain | o.a.catalina.core.StandardService    - Stopping service [Tomcat]
+2024-10-27 23:44:41.772[1730043881772] | WARN  | restartedMain | o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2024-10-27 23:44:41.785[1730043881785] | INFO  | restartedMain | o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-10-27 23:44:41.788[1730043881788] | ERROR | restartedMain | o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2024-10-27 23:45:36.556[1730043936556] | INFO  | restartedMain | o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-27 23:45:36.801[1730043936801] | INFO  | restartedMain | com.caicongyang.stock.Application    - No active profile set, falling back to default profiles: default
+2024-10-27 23:45:37.574[1730043937574] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'commonMapper' and 'com.caicongyang.stock.mapper.CommonMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:45:37.575[1730043937575] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'studentMapper' and 'com.caicongyang.stock.mapper.StudentMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:45:37.575[1730043937575] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TEtfHigherMapper' and 'com.caicongyang.stock.mapper.TEtfHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:45:37.575[1730043937575] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TEtfMapper' and 'com.caicongyang.stock.mapper.TEtfMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:45:37.575[1730043937575] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TIndustryStockMapper' and 'com.caicongyang.stock.mapper.TIndustryStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:45:37.575[1730043937575] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockHigherMapper' and 'com.caicongyang.stock.mapper.TStockHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:45:37.575[1730043937575] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockLimitMapper' and 'com.caicongyang.stock.mapper.TStockLimitMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:45:37.575[1730043937575] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockMainMapper' and 'com.caicongyang.stock.mapper.TStockMainMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:45:37.575[1730043937575] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockMapper' and 'com.caicongyang.stock.mapper.TStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:45:37.575[1730043937575] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockWeekHigherMapper' and 'com.caicongyang.stock.mapper.TStockWeekHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:45:37.575[1730043937575] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockWeekMapper' and 'com.caicongyang.stock.mapper.TStockWeekMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:45:37.575[1730043937575] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TTransactionEtfMapper' and 'com.caicongyang.stock.mapper.TTransactionEtfMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:45:37.575[1730043937575] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TTransactionStockMapper' and 'com.caicongyang.stock.mapper.TTransactionStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:45:37.575[1730043937575] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TVolumeIncreaseMapper' and 'com.caicongyang.stock.mapper.TVolumeIncreaseMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:45:37.576[1730043937576] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - No MyBatis mapper was found in '[com.caicongyang.stock.mapper]' package. Please check your configuration.
+2024-10-27 23:45:37.991[1730043937991] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-10-27 23:45:37.994[1730043937994] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2024-10-27 23:45:38.024[1730043938024] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17ms. Found 0 repository interfaces.
+2024-10-27 23:45:38.346[1730043938346] | INFO  | restartedMain | o.s.cloud.context.scope.GenericScope - BeanFactory id=5139f72e-3f62-38f4-a7f4-97574f600804
+2024-10-27 23:45:38.712[1730043938712] | INFO  | restartedMain | o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-10-27 23:45:39.661[1730043939661] | INFO  | restartedMain | o.s.b.w.e.tomcat.TomcatWebServer     - Tomcat initialized with port(s): 8888 (http)
+2024-10-27 23:45:39.671[1730043939671] | INFO  | restartedMain | o.a.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:45:39.671[1730043939671] | INFO  | restartedMain | o.a.catalina.core.StandardService    - Starting service [Tomcat]
+2024-10-27 23:45:39.671[1730043939671] | INFO  | restartedMain | o.a.catalina.core.StandardEngine     - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2024-10-27 23:45:39.752[1730043939752] | INFO  | restartedMain | o.a.c.c.C.[Tomcat].[localhost].[/]   - Initializing Spring embedded WebApplicationContext
+2024-10-27 23:45:39.752[1730043939752] | INFO  | restartedMain | o.s.web.context.ContextLoader        - Root WebApplicationContext: initialization completed in 2931 ms
+2024-10-27 23:45:39.953[1730043939953] | WARN  | restartedMain | c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2024-10-27 23:45:39.954[1730043939954] | INFO  | restartedMain | c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2024-10-27 23:45:39.972[1730043939972] | INFO  | restartedMain | c.n.config.DynamicPropertyFactory    - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@3776f522
+2024-10-27 23:45:40.376[1730043940376] | INFO  | restartedMain | org.redisson.Version                 - Redisson 3.11.6
+2024-10-27 23:45:40.811[1730043940811] | INFO  | redisson-netty-2-16 | o.r.c.p.MasterPubSubConnectionPool   - 1 connections initialized for 159.138.152.92/159.138.152.92:3373
+2024-10-27 23:45:41.056[1730043941056] | INFO  | redisson-netty-2-19 | o.r.c.pool.MasterConnectionPool      - 24 connections initialized for 159.138.152.92/159.138.152.92:3373
+2024-10-27 23:45:41.333[1730043941333] | INFO  | restartedMain | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Starting...
+2024-10-27 23:45:44.042[1730043944042] | INFO  | restartedMain | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Start completed.
+2024-10-27 23:45:44.208[1730043944208] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TEtfHigher.
+2024-10-27 23:45:44.240[1730043944240] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TEtf.
+2024-10-27 23:45:44.273[1730043944273] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockHigher.
+2024-10-27 23:45:44.301[1730043944301] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockLimit.
+2024-10-27 23:45:44.322[1730043944322] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockMain.
+2024-10-27 23:45:44.344[1730043944344] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStock.
+2024-10-27 23:45:44.368[1730043944368] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockWeekHigher.
+2024-10-27 23:45:44.389[1730043944389] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockWeek.
+2024-10-27 23:45:44.410[1730043944410] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TTransactionEtf.
+2024-10-27 23:45:44.456[1730043944456] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TTransactionStock.
+2024-10-27 23:45:44.656[1730043944656] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TIndustryStock.
+2024-10-27 23:45:44.980[1730043944980] | INFO  | restartedMain | o.s.s.c.ThreadPoolTaskExecutor       - Initializing ExecutorService 'asyncTaskExecutor'
+2024-10-27 23:45:45.466[1730043945466] | INFO  | restartedMain | o.s.b.a.e.web.EndpointLinksResolver  - Exposing 4 endpoint(s) beneath base path '/actuator'
+2024-10-27 23:45:45.573[1730043945573] | INFO  | restartedMain | s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2024-10-27 23:45:45.592[1730043945592] | WARN  | restartedMain | o.s.c.n.a.ArchaiusAutoConfiguration  - No spring.application.name found, defaulting to 'application'
+2024-10-27 23:45:45.592[1730043945592] | WARN  | restartedMain | c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2024-10-27 23:45:45.592[1730043945592] | INFO  | restartedMain | c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2024-10-27 23:45:45.784[1730043945784] | INFO  | restartedMain | o.s.b.d.a.OptionalLiveReloadServer   - LiveReload server is running on port 35729
+2024-10-27 23:45:45.833[1730043945833] | INFO  | restartedMain | o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2024-10-27 23:45:46.600[1730043946600] | INFO  | restartedMain | o.s.s.c.ThreadPoolTaskScheduler      - Initializing ExecutorService 'taskScheduler'
+2024-10-27 23:45:46.782[1730043946782] | INFO  | restartedMain | s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2024-10-27 23:45:46.811[1730043946811] | INFO  | restartedMain | s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2024-10-27 23:45:46.861[1730043946861] | INFO  | restartedMain | s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2024-10-27 23:45:47.142[1730043947142] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: calculateHigherStockUsingGET_1
+2024-10-27 23:45:47.188[1730043947188] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_1
+2024-10-27 23:45:47.204[1730043947204] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getTransactionStockDataUsingGET_1
+2024-10-27 23:45:47.216[1730043947216] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_1
+2024-10-27 23:45:47.218[1730043947218] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: deleteUsingDELETE_1
+2024-10-27 23:45:47.228[1730043947228] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_2
+2024-10-27 23:45:47.231[1730043947231] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: updateUsingPUT_1
+2024-10-27 23:45:47.258[1730043947258] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: setStudentByIdUsingPOST_1
+2024-10-27 23:45:47.285[1730043947285] | INFO  | restartedMain | o.a.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:45:47.303[1730043947303] | INFO  | restartedMain | o.s.b.w.e.tomcat.TomcatWebServer     - Tomcat started on port(s): 8888 (http) with context path ''
+2024-10-27 23:45:47.308[1730043947308] | INFO  | restartedMain | com.caicongyang.stock.Application    - Started Application in 11.376 seconds (JVM running for 12.081)
+2024-10-27 23:45:53.043[1730043953043] | INFO  | http-nio-8888-exec-1 | o.a.c.c.C.[Tomcat].[localhost].[/]   - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-27 23:45:53.043[1730043953043] | INFO  | http-nio-8888-exec-1 | o.s.web.servlet.DispatcherServlet    - Initializing Servlet 'dispatcherServlet'
+2024-10-27 23:45:53.057[1730043953057] | INFO  | http-nio-8888-exec-1 | o.s.web.servlet.DispatcherServlet    - Completed initialization in 14 ms
+2024-10-27 23:47:57.524[1730044077524] | INFO  | SpringContextShutdownHook | o.s.s.c.ThreadPoolTaskScheduler      - Shutting down ExecutorService 'taskScheduler'
+2024-10-27 23:47:57.527[1730044077527] | INFO  | SpringContextShutdownHook | o.s.s.c.ThreadPoolTaskExecutor       - Shutting down ExecutorService 'asyncTaskExecutor'
+2024-10-27 23:47:57.637[1730044077637] | INFO  | SpringContextShutdownHook | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Shutdown initiated...
+2024-10-27 23:47:57.644[1730044077644] | INFO  | SpringContextShutdownHook | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Shutdown completed.
+2024-10-27 23:48:03.650[1730044083650] | INFO  | restartedMain | o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-27 23:48:03.935[1730044083935] | INFO  | restartedMain | com.caicongyang.stock.Application    - No active profile set, falling back to default profiles: default
+2024-10-27 23:48:04.741[1730044084741] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'commonMapper' and 'com.caicongyang.stock.mapper.CommonMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:48:04.741[1730044084741] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'studentMapper' and 'com.caicongyang.stock.mapper.StudentMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:48:04.741[1730044084741] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TEtfHigherMapper' and 'com.caicongyang.stock.mapper.TEtfHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:48:04.741[1730044084741] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TEtfMapper' and 'com.caicongyang.stock.mapper.TEtfMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:48:04.741[1730044084741] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TIndustryStockMapper' and 'com.caicongyang.stock.mapper.TIndustryStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:48:04.741[1730044084741] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockHigherMapper' and 'com.caicongyang.stock.mapper.TStockHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:48:04.741[1730044084741] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockLimitMapper' and 'com.caicongyang.stock.mapper.TStockLimitMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:48:04.741[1730044084741] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockMainMapper' and 'com.caicongyang.stock.mapper.TStockMainMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:48:04.741[1730044084741] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockMapper' and 'com.caicongyang.stock.mapper.TStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:48:04.741[1730044084741] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockWeekHigherMapper' and 'com.caicongyang.stock.mapper.TStockWeekHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:48:04.741[1730044084741] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockWeekMapper' and 'com.caicongyang.stock.mapper.TStockWeekMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:48:04.742[1730044084742] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TTransactionEtfMapper' and 'com.caicongyang.stock.mapper.TTransactionEtfMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:48:04.742[1730044084742] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TTransactionStockMapper' and 'com.caicongyang.stock.mapper.TTransactionStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:48:04.742[1730044084742] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TVolumeIncreaseMapper' and 'com.caicongyang.stock.mapper.TVolumeIncreaseMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:48:04.742[1730044084742] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - No MyBatis mapper was found in '[com.caicongyang.stock.mapper]' package. Please check your configuration.
+2024-10-27 23:48:05.134[1730044085134] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-10-27 23:48:05.137[1730044085137] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2024-10-27 23:48:05.171[1730044085171] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17ms. Found 0 repository interfaces.
+2024-10-27 23:48:05.467[1730044085467] | INFO  | restartedMain | o.s.cloud.context.scope.GenericScope - BeanFactory id=5139f72e-3f62-38f4-a7f4-97574f600804
+2024-10-27 23:48:05.832[1730044085832] | INFO  | restartedMain | o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-10-27 23:48:06.728[1730044086728] | INFO  | restartedMain | o.s.b.w.e.tomcat.TomcatWebServer     - Tomcat initialized with port(s): 8888 (http)
+2024-10-27 23:48:06.737[1730044086737] | INFO  | restartedMain | o.a.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:48:06.738[1730044086738] | INFO  | restartedMain | o.a.catalina.core.StandardService    - Starting service [Tomcat]
+2024-10-27 23:48:06.738[1730044086738] | INFO  | restartedMain | o.a.catalina.core.StandardEngine     - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2024-10-27 23:48:06.820[1730044086820] | INFO  | restartedMain | o.a.c.c.C.[Tomcat].[localhost].[/]   - Initializing Spring embedded WebApplicationContext
+2024-10-27 23:48:06.821[1730044086821] | INFO  | restartedMain | o.s.web.context.ContextLoader        - Root WebApplicationContext: initialization completed in 2867 ms
+2024-10-27 23:48:06.976[1730044086976] | WARN  | restartedMain | c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2024-10-27 23:48:06.976[1730044086976] | INFO  | restartedMain | c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2024-10-27 23:48:06.989[1730044086989] | INFO  | restartedMain | c.n.config.DynamicPropertyFactory    - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@6ced9844
+2024-10-27 23:48:07.380[1730044087380] | INFO  | restartedMain | org.redisson.Version                 - Redisson 3.11.6
+2024-10-27 23:48:07.891[1730044087891] | INFO  | redisson-netty-2-18 | o.r.c.pool.MasterConnectionPool      - 24 connections initialized for 159.138.152.92/159.138.152.92:3373
+2024-10-27 23:48:07.892[1730044087892] | INFO  | redisson-netty-2-19 | o.r.c.p.MasterPubSubConnectionPool   - 1 connections initialized for 159.138.152.92/159.138.152.92:3373
+2024-10-27 23:48:08.191[1730044088191] | INFO  | restartedMain | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Starting...
+2024-10-27 23:48:12.357[1730044092357] | INFO  | restartedMain | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Start completed.
+2024-10-27 23:48:12.511[1730044092511] | WARN  | restartedMain | o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'scheduleTask': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'commonMapper' defined in file [/Users/caicongyang/IdeaProjects/stock/target/classes/com/caicongyang/stock/mapper/CommonMapper.class]: Cannot resolve reference to bean 'stockSqlSessionFactoryBean' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'stockSqlSessionFactoryBean' defined in class path resource [com/caicongyang/stock/conf/DatasourceAutoConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryBean' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/caicongyang/IdeaProjects/stock/target/classes/mapper/CommonMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/caicongyang/IdeaProjects/stock/target/classes/mapper/CommonMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.caicongyang.stock.domain.TVolumeIncreaseDTO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.caicongyang.stock.domain.TVolumeIncreaseDTO
+2024-10-27 23:48:12.637[1730044092637] | INFO  | restartedMain | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Shutdown initiated...
+2024-10-27 23:48:18.166[1730044098166] | INFO  | restartedMain | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Shutdown completed.
+2024-10-27 23:48:18.168[1730044098168] | INFO  | restartedMain | o.a.catalina.core.StandardService    - Stopping service [Tomcat]
+2024-10-27 23:48:18.185[1730044098185] | INFO  | restartedMain | o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-10-27 23:48:18.190[1730044098190] | ERROR | restartedMain | o.s.boot.SpringApplication           - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'scheduleTask': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'commonMapper' defined in file [/Users/caicongyang/IdeaProjects/stock/target/classes/com/caicongyang/stock/mapper/CommonMapper.class]: Cannot resolve reference to bean 'stockSqlSessionFactoryBean' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'stockSqlSessionFactoryBean' defined in class path resource [com/caicongyang/stock/conf/DatasourceAutoConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryBean' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/caicongyang/IdeaProjects/stock/target/classes/mapper/CommonMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/caicongyang/IdeaProjects/stock/target/classes/mapper/CommonMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.caicongyang.stock.domain.TVolumeIncreaseDTO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.caicongyang.stock.domain.TVolumeIncreaseDTO
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:337)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1429)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.caicongyang.stock.Application.main(Application.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'commonMapper' defined in file [/Users/caicongyang/IdeaProjects/stock/target/classes/com/caicongyang/stock/mapper/CommonMapper.class]: Cannot resolve reference to bean 'stockSqlSessionFactoryBean' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'stockSqlSessionFactoryBean' defined in class path resource [com/caicongyang/stock/conf/DatasourceAutoConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryBean' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/caicongyang/IdeaProjects/stock/target/classes/mapper/CommonMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/caicongyang/IdeaProjects/stock/target/classes/mapper/CommonMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.caicongyang.stock.domain.TVolumeIncreaseDTO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.caicongyang.stock.domain.TVolumeIncreaseDTO
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1706)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1451)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:454)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:543)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:513)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:653)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:224)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:334)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'stockSqlSessionFactoryBean' defined in class path resource [com/caicongyang/stock/conf/DatasourceAutoConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryBean' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/caicongyang/IdeaProjects/stock/target/classes/mapper/CommonMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/caicongyang/IdeaProjects/stock/target/classes/mapper/CommonMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.caicongyang.stock.domain.TVolumeIncreaseDTO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.caicongyang.stock.domain.TVolumeIncreaseDTO
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:645)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:625)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	... 38 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryBean' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/caicongyang/IdeaProjects/stock/target/classes/mapper/CommonMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/caicongyang/IdeaProjects/stock/target/classes/mapper/CommonMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.caicongyang.stock.domain.TVolumeIncreaseDTO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.caicongyang.stock.domain.TVolumeIncreaseDTO
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:640)
+	... 48 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/caicongyang/IdeaProjects/stock/target/classes/mapper/CommonMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/caicongyang/IdeaProjects/stock/target/classes/mapper/CommonMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.caicongyang.stock.domain.TVolumeIncreaseDTO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.caicongyang.stock.domain.TVolumeIncreaseDTO
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:617)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:422)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:636)
+	at com.caicongyang.stock.conf.DatasourceAutoConfig.sqlSessionFactoryBean(DatasourceAutoConfig.java:58)
+	at com.caicongyang.stock.conf.DatasourceAutoConfig$$EnhancerBySpringCGLIB$$35c42a4a.CGLIB$sqlSessionFactoryBean$1(<generated>)
+	at com.caicongyang.stock.conf.DatasourceAutoConfig$$EnhancerBySpringCGLIB$$35c42a4a$$FastClassBySpringCGLIB$$4f85bcca.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363)
+	at com.caicongyang.stock.conf.DatasourceAutoConfig$$EnhancerBySpringCGLIB$$35c42a4a.sqlSessionFactoryBean(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 49 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/caicongyang/IdeaProjects/stock/target/classes/mapper/CommonMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.caicongyang.stock.domain.TVolumeIncreaseDTO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.caicongyang.stock.domain.TVolumeIncreaseDTO
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:122)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:94)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:615)
+	... 62 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.caicongyang.stock.domain.TVolumeIncreaseDTO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.caicongyang.stock.domain.TVolumeIncreaseDTO
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:74)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:137)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:130)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	... 64 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.caicongyang.stock.domain.TVolumeIncreaseDTO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.caicongyang.stock.domain.TVolumeIncreaseDTO
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 68 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.caicongyang.stock.domain.TVolumeIncreaseDTO
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
+	... 70 common frames omitted
+2024-10-27 23:50:04.453[1730044204453] | INFO  | restartedMain | o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-27 23:50:04.690[1730044204690] | INFO  | restartedMain | com.caicongyang.stock.Application    - No active profile set, falling back to default profiles: default
+2024-10-27 23:50:05.414[1730044205414] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'commonMapper' and 'com.caicongyang.stock.mapper.CommonMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:05.414[1730044205414] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'studentMapper' and 'com.caicongyang.stock.mapper.StudentMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:05.414[1730044205414] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TEtfHigherMapper' and 'com.caicongyang.stock.mapper.TEtfHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:05.415[1730044205415] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TEtfMapper' and 'com.caicongyang.stock.mapper.TEtfMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:05.415[1730044205415] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TIndustryStockMapper' and 'com.caicongyang.stock.mapper.TIndustryStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:05.415[1730044205415] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockHigherMapper' and 'com.caicongyang.stock.mapper.TStockHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:05.415[1730044205415] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockLimitMapper' and 'com.caicongyang.stock.mapper.TStockLimitMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:05.415[1730044205415] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockMainMapper' and 'com.caicongyang.stock.mapper.TStockMainMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:05.415[1730044205415] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockMapper' and 'com.caicongyang.stock.mapper.TStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:05.415[1730044205415] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockWeekHigherMapper' and 'com.caicongyang.stock.mapper.TStockWeekHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:05.415[1730044205415] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockWeekMapper' and 'com.caicongyang.stock.mapper.TStockWeekMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:05.415[1730044205415] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TTransactionEtfMapper' and 'com.caicongyang.stock.mapper.TTransactionEtfMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:05.415[1730044205415] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TTransactionStockMapper' and 'com.caicongyang.stock.mapper.TTransactionStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:05.415[1730044205415] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TVolumeIncreaseMapper' and 'com.caicongyang.stock.mapper.TVolumeIncreaseMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:05.415[1730044205415] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - No MyBatis mapper was found in '[com.caicongyang.stock.mapper]' package. Please check your configuration.
+2024-10-27 23:50:05.808[1730044205808] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-10-27 23:50:05.810[1730044205810] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2024-10-27 23:50:05.838[1730044205838] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2024-10-27 23:50:06.138[1730044206138] | INFO  | restartedMain | o.s.cloud.context.scope.GenericScope - BeanFactory id=5139f72e-3f62-38f4-a7f4-97574f600804
+2024-10-27 23:50:06.468[1730044206468] | INFO  | restartedMain | o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-10-27 23:50:07.366[1730044207366] | INFO  | restartedMain | o.s.b.w.e.tomcat.TomcatWebServer     - Tomcat initialized with port(s): 8888 (http)
+2024-10-27 23:50:07.375[1730044207375] | INFO  | restartedMain | o.a.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:50:07.376[1730044207376] | INFO  | restartedMain | o.a.catalina.core.StandardService    - Starting service [Tomcat]
+2024-10-27 23:50:07.376[1730044207376] | INFO  | restartedMain | o.a.catalina.core.StandardEngine     - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2024-10-27 23:50:07.454[1730044207454] | INFO  | restartedMain | o.a.c.c.C.[Tomcat].[localhost].[/]   - Initializing Spring embedded WebApplicationContext
+2024-10-27 23:50:07.454[1730044207454] | INFO  | restartedMain | o.s.web.context.ContextLoader        - Root WebApplicationContext: initialization completed in 2744 ms
+2024-10-27 23:50:07.639[1730044207639] | WARN  | restartedMain | c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2024-10-27 23:50:07.639[1730044207639] | INFO  | restartedMain | c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2024-10-27 23:50:07.655[1730044207655] | INFO  | restartedMain | c.n.config.DynamicPropertyFactory    - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@1cd5cb0a
+2024-10-27 23:50:08.026[1730044208026] | INFO  | restartedMain | org.redisson.Version                 - Redisson 3.11.6
+2024-10-27 23:50:08.421[1730044208421] | INFO  | redisson-netty-2-11 | o.r.c.p.MasterPubSubConnectionPool   - 1 connections initialized for 159.138.152.92/159.138.152.92:3373
+2024-10-27 23:50:08.447[1730044208447] | INFO  | redisson-netty-2-19 | o.r.c.pool.MasterConnectionPool      - 24 connections initialized for 159.138.152.92/159.138.152.92:3373
+2024-10-27 23:50:08.702[1730044208702] | INFO  | restartedMain | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Starting...
+2024-10-27 23:50:11.869[1730044211869] | INFO  | restartedMain | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Start completed.
+2024-10-27 23:50:12.036[1730044212036] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TEtfHigher.
+2024-10-27 23:50:12.068[1730044212068] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TEtf.
+2024-10-27 23:50:12.102[1730044212102] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockHigher.
+2024-10-27 23:50:12.130[1730044212130] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockLimit.
+2024-10-27 23:50:12.151[1730044212151] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockMain.
+2024-10-27 23:50:12.171[1730044212171] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStock.
+2024-10-27 23:50:12.192[1730044212192] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockWeekHigher.
+2024-10-27 23:50:12.212[1730044212212] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockWeek.
+2024-10-27 23:50:12.232[1730044212232] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TTransactionEtf.
+2024-10-27 23:50:12.280[1730044212280] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TTransactionStock.
+2024-10-27 23:50:12.481[1730044212481] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TIndustryStock.
+2024-10-27 23:50:12.790[1730044212790] | INFO  | restartedMain | o.s.s.c.ThreadPoolTaskExecutor       - Initializing ExecutorService 'asyncTaskExecutor'
+2024-10-27 23:50:13.270[1730044213270] | INFO  | restartedMain | o.s.b.a.e.web.EndpointLinksResolver  - Exposing 4 endpoint(s) beneath base path '/actuator'
+2024-10-27 23:50:13.387[1730044213387] | INFO  | restartedMain | s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2024-10-27 23:50:13.411[1730044213411] | WARN  | restartedMain | o.s.c.n.a.ArchaiusAutoConfiguration  - No spring.application.name found, defaulting to 'application'
+2024-10-27 23:50:13.412[1730044213412] | WARN  | restartedMain | c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2024-10-27 23:50:13.412[1730044213412] | INFO  | restartedMain | c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2024-10-27 23:50:13.628[1730044213628] | INFO  | restartedMain | o.s.b.d.a.OptionalLiveReloadServer   - LiveReload server is running on port 35729
+2024-10-27 23:50:13.679[1730044213679] | INFO  | restartedMain | o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2024-10-27 23:50:14.444[1730044214444] | INFO  | restartedMain | o.s.s.c.ThreadPoolTaskScheduler      - Initializing ExecutorService 'taskScheduler'
+2024-10-27 23:50:14.570[1730044214570] | INFO  | restartedMain | s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2024-10-27 23:50:14.591[1730044214591] | INFO  | restartedMain | s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2024-10-27 23:50:14.627[1730044214627] | INFO  | restartedMain | s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2024-10-27 23:50:14.901[1730044214901] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: calculateHigherStockUsingGET_1
+2024-10-27 23:50:14.944[1730044214944] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_1
+2024-10-27 23:50:14.962[1730044214962] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getTransactionStockDataUsingGET_1
+2024-10-27 23:50:14.974[1730044214974] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_1
+2024-10-27 23:50:14.977[1730044214977] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: deleteUsingDELETE_1
+2024-10-27 23:50:14.986[1730044214986] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_2
+2024-10-27 23:50:14.988[1730044214988] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: updateUsingPUT_1
+2024-10-27 23:50:15.019[1730044215019] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: setStudentByIdUsingPOST_1
+2024-10-27 23:50:15.046[1730044215046] | INFO  | restartedMain | o.a.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:50:15.063[1730044215063] | INFO  | restartedMain | o.s.b.w.e.tomcat.TomcatWebServer     - Tomcat started on port(s): 8888 (http) with context path ''
+2024-10-27 23:50:15.068[1730044215068] | INFO  | restartedMain | com.caicongyang.stock.Application    - Started Application in 11.207 seconds (JVM running for 11.873)
+2024-10-27 23:50:18.875[1730044218875] | INFO  | http-nio-8888-exec-1 | o.a.c.c.C.[Tomcat].[localhost].[/]   - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-27 23:50:18.876[1730044218876] | INFO  | http-nio-8888-exec-1 | o.s.web.servlet.DispatcherServlet    - Initializing Servlet 'dispatcherServlet'
+2024-10-27 23:50:18.887[1730044218887] | INFO  | http-nio-8888-exec-1 | o.s.web.servlet.DispatcherServlet    - Completed initialization in 11 ms
+2024-10-27 23:50:42.932[1730044242932] | INFO  | SpringContextShutdownHook | o.s.s.c.ThreadPoolTaskScheduler      - Shutting down ExecutorService 'taskScheduler'
+2024-10-27 23:50:42.936[1730044242936] | INFO  | SpringContextShutdownHook | o.s.s.c.ThreadPoolTaskExecutor       - Shutting down ExecutorService 'asyncTaskExecutor'
+2024-10-27 23:50:43.038[1730044243038] | INFO  | SpringContextShutdownHook | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Shutdown initiated...
+2024-10-27 23:50:43.043[1730044243043] | INFO  | SpringContextShutdownHook | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Shutdown completed.
+2024-10-27 23:50:46.624[1730044246624] | INFO  | restartedMain | o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-27 23:50:46.962[1730044246962] | INFO  | restartedMain | com.caicongyang.stock.Application    - No active profile set, falling back to default profiles: default
+2024-10-27 23:50:47.766[1730044247766] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'commonMapper' and 'com.caicongyang.stock.mapper.CommonMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:47.766[1730044247766] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'studentMapper' and 'com.caicongyang.stock.mapper.StudentMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:47.766[1730044247766] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TEtfHigherMapper' and 'com.caicongyang.stock.mapper.TEtfHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:47.766[1730044247766] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TEtfMapper' and 'com.caicongyang.stock.mapper.TEtfMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:47.766[1730044247766] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TIndustryStockMapper' and 'com.caicongyang.stock.mapper.TIndustryStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:47.766[1730044247766] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockHigherMapper' and 'com.caicongyang.stock.mapper.TStockHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:47.766[1730044247766] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockLimitMapper' and 'com.caicongyang.stock.mapper.TStockLimitMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:47.767[1730044247767] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockMainMapper' and 'com.caicongyang.stock.mapper.TStockMainMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:47.767[1730044247767] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockMapper' and 'com.caicongyang.stock.mapper.TStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:47.767[1730044247767] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockWeekHigherMapper' and 'com.caicongyang.stock.mapper.TStockWeekHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:47.767[1730044247767] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockWeekMapper' and 'com.caicongyang.stock.mapper.TStockWeekMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:47.767[1730044247767] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TTransactionEtfMapper' and 'com.caicongyang.stock.mapper.TTransactionEtfMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:47.767[1730044247767] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TTransactionStockMapper' and 'com.caicongyang.stock.mapper.TTransactionStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:47.767[1730044247767] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TVolumeIncreaseMapper' and 'com.caicongyang.stock.mapper.TVolumeIncreaseMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:50:47.767[1730044247767] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - No MyBatis mapper was found in '[com.caicongyang.stock.mapper]' package. Please check your configuration.
+2024-10-27 23:50:48.252[1730044248252] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-10-27 23:50:48.257[1730044248257] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2024-10-27 23:50:48.301[1730044248301] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25ms. Found 0 repository interfaces.
+2024-10-27 23:50:48.602[1730044248602] | INFO  | restartedMain | o.s.cloud.context.scope.GenericScope - BeanFactory id=5139f72e-3f62-38f4-a7f4-97574f600804
+2024-10-27 23:50:49.033[1730044249033] | INFO  | restartedMain | o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-10-27 23:50:50.117[1730044250117] | INFO  | restartedMain | o.s.b.w.e.tomcat.TomcatWebServer     - Tomcat initialized with port(s): 8888 (http)
+2024-10-27 23:50:50.128[1730044250128] | INFO  | restartedMain | o.a.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:50:50.129[1730044250129] | INFO  | restartedMain | o.a.catalina.core.StandardService    - Starting service [Tomcat]
+2024-10-27 23:50:50.129[1730044250129] | INFO  | restartedMain | o.a.catalina.core.StandardEngine     - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2024-10-27 23:50:50.221[1730044250221] | INFO  | restartedMain | o.a.c.c.C.[Tomcat].[localhost].[/]   - Initializing Spring embedded WebApplicationContext
+2024-10-27 23:50:50.221[1730044250221] | INFO  | restartedMain | o.s.web.context.ContextLoader        - Root WebApplicationContext: initialization completed in 3236 ms
+2024-10-27 23:50:50.450[1730044250450] | WARN  | restartedMain | c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2024-10-27 23:50:50.450[1730044250450] | INFO  | restartedMain | c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2024-10-27 23:50:50.464[1730044250464] | INFO  | restartedMain | c.n.config.DynamicPropertyFactory    - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@57f6ef3
+2024-10-27 23:50:50.915[1730044250915] | INFO  | restartedMain | org.redisson.Version                 - Redisson 3.11.6
+2024-10-27 23:50:51.402[1730044251402] | INFO  | redisson-netty-2-14 | o.r.c.p.MasterPubSubConnectionPool   - 1 connections initialized for 159.138.152.92/159.138.152.92:3373
+2024-10-27 23:50:52.403[1730044252403] | INFO  | redisson-netty-2-19 | o.r.c.pool.MasterConnectionPool      - 24 connections initialized for 159.138.152.92/159.138.152.92:3373
+2024-10-27 23:50:52.660[1730044252660] | INFO  | restartedMain | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Starting...
+2024-10-27 23:50:55.726[1730044255726] | INFO  | restartedMain | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Start completed.
+2024-10-27 23:50:55.905[1730044255905] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TEtfHigher.
+2024-10-27 23:50:55.937[1730044255937] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TEtf.
+2024-10-27 23:50:55.966[1730044255966] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockHigher.
+2024-10-27 23:50:55.991[1730044255991] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockLimit.
+2024-10-27 23:50:56.013[1730044256013] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockMain.
+2024-10-27 23:50:56.036[1730044256036] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStock.
+2024-10-27 23:50:56.058[1730044256058] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockWeekHigher.
+2024-10-27 23:50:56.080[1730044256080] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockWeek.
+2024-10-27 23:50:56.102[1730044256102] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TTransactionEtf.
+2024-10-27 23:50:56.151[1730044256151] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TTransactionStock.
+2024-10-27 23:50:56.356[1730044256356] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TIndustryStock.
+2024-10-27 23:50:56.673[1730044256673] | INFO  | restartedMain | o.s.s.c.ThreadPoolTaskExecutor       - Initializing ExecutorService 'asyncTaskExecutor'
+2024-10-27 23:50:57.198[1730044257198] | INFO  | restartedMain | o.s.b.a.e.web.EndpointLinksResolver  - Exposing 4 endpoint(s) beneath base path '/actuator'
+2024-10-27 23:50:57.350[1730044257350] | INFO  | restartedMain | s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2024-10-27 23:50:57.378[1730044257378] | WARN  | restartedMain | o.s.c.n.a.ArchaiusAutoConfiguration  - No spring.application.name found, defaulting to 'application'
+2024-10-27 23:50:57.378[1730044257378] | WARN  | restartedMain | c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2024-10-27 23:50:57.379[1730044257379] | INFO  | restartedMain | c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2024-10-27 23:50:57.634[1730044257634] | INFO  | restartedMain | o.s.b.d.a.OptionalLiveReloadServer   - LiveReload server is running on port 35729
+2024-10-27 23:50:57.695[1730044257695] | INFO  | restartedMain | o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2024-10-27 23:50:58.660[1730044258660] | INFO  | restartedMain | o.s.s.c.ThreadPoolTaskScheduler      - Initializing ExecutorService 'taskScheduler'
+2024-10-27 23:50:58.816[1730044258816] | INFO  | restartedMain | s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2024-10-27 23:50:58.845[1730044258845] | INFO  | restartedMain | s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2024-10-27 23:50:58.904[1730044258904] | INFO  | restartedMain | s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2024-10-27 23:50:59.200[1730044259200] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: calculateHigherStockUsingGET_1
+2024-10-27 23:50:59.251[1730044259251] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_1
+2024-10-27 23:50:59.269[1730044259269] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getTransactionStockDataUsingGET_1
+2024-10-27 23:50:59.281[1730044259281] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_1
+2024-10-27 23:50:59.284[1730044259284] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: deleteUsingDELETE_1
+2024-10-27 23:50:59.295[1730044259295] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_2
+2024-10-27 23:50:59.298[1730044259298] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: updateUsingPUT_1
+2024-10-27 23:50:59.329[1730044259329] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: setStudentByIdUsingPOST_1
+2024-10-27 23:50:59.359[1730044259359] | INFO  | restartedMain | o.a.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:50:59.377[1730044259377] | INFO  | restartedMain | o.s.b.w.e.tomcat.TomcatWebServer     - Tomcat started on port(s): 8888 (http) with context path ''
+2024-10-27 23:50:59.382[1730044259382] | INFO  | restartedMain | com.caicongyang.stock.Application    - Started Application in 13.287 seconds (JVM running for 14.068)
+2024-10-27 23:51:21.693[1730044281693] | INFO  | http-nio-8888-exec-1 | o.a.c.c.C.[Tomcat].[localhost].[/]   - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-27 23:51:21.693[1730044281693] | INFO  | http-nio-8888-exec-1 | o.s.web.servlet.DispatcherServlet    - Initializing Servlet 'dispatcherServlet'
+2024-10-27 23:51:21.707[1730044281707] | INFO  | http-nio-8888-exec-1 | o.s.web.servlet.DispatcherServlet    - Completed initialization in 14 ms
+2024-10-27 23:53:12.062[1730044392062] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=1m42s253ms).
+2024-10-27 23:53:12.186[1730044392186] | INFO  | SpringContextShutdownHook | o.s.s.c.ThreadPoolTaskScheduler      - Shutting down ExecutorService 'taskScheduler'
+2024-10-27 23:53:12.192[1730044392192] | INFO  | SpringContextShutdownHook | o.s.s.c.ThreadPoolTaskExecutor       - Shutting down ExecutorService 'asyncTaskExecutor'
+2024-10-27 23:53:12.319[1730044392319] | INFO  | SpringContextShutdownHook | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Shutdown initiated...
+2024-10-27 23:53:12.331[1730044392331] | INFO  | SpringContextShutdownHook | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Shutdown completed.
+2024-10-27 23:53:12.340[1730044392340] | WARN  | http-nio-8888-exec-2 | c.zaxxer.hikari.pool.ProxyConnection - masterDataSource - Connection com.mysql.cj.jdbc.ConnectionImpl@493fe35e marked as broken because of SQLSTATE(08S01), ErrorCode(0)
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 135 milliseconds ago. The last packet sent successfully to the server was 254 milliseconds ago.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy135.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:168)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:82)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:61)
+	at com.sun.proxy.$Proxy150.querySortEtfStockData(Unknown Source)
+	at com.caicongyang.stock.service.impl.TEtfServiceImpl.querySortEtfStockData(TEtfServiceImpl.java:73)
+	at com.caicongyang.stock.service.impl.TEtfServiceImpl$$FastClassBySpringCGLIB$$fd662a5f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:685)
+	at com.caicongyang.stock.service.impl.TEtfServiceImpl$$EnhancerBySpringCGLIB$$2f64eeaa.querySortEtfStockData(<generated>)
+	at com.caicongyang.stock.controllers.TEtfController.querySortEtfStockData(TEtfController.java:50)
+	at com.caicongyang.stock.controllers.TEtfController$$FastClassBySpringCGLIB$$2b0fba58.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at com.caicongyang.core.aspect.RequestLogAspect.doAround(RequestLogAspect.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:62)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:53)
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:365)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:420)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:345)
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.caicongyang.stock.controllers.TEtfController$$EnhancerBySpringCGLIB$$94747797.querySortEtfStockData(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 135 milliseconds ago. The last packet sent successfully to the server was 254 milliseconds ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:538)
+	at com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:702)
+	at com.mysql.cj.protocol.a.NativeProtocol.sendCommand(NativeProtocol.java:641)
+	at com.mysql.cj.protocol.a.NativeProtocol.sendQueryPacket(NativeProtocol.java:940)
+	at com.mysql.cj.NativeSession.execSQL(NativeSession.java:1075)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:930)
+	... 114 common frames omitted
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:940)
+	at sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+	at java.io.FilterInputStream.read(FilterInputStream.java:133)
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:64)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:63)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:45)
+	at com.mysql.cj.protocol.a.TimeTrackingPacketReader.readHeader(TimeTrackingPacketReader.java:52)
+	at com.mysql.cj.protocol.a.TimeTrackingPacketReader.readHeader(TimeTrackingPacketReader.java:41)
+	at com.mysql.cj.protocol.a.MultiPacketReader.readHeader(MultiPacketReader.java:54)
+	at com.mysql.cj.protocol.a.MultiPacketReader.readHeader(MultiPacketReader.java:44)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:532)
+	... 119 common frames omitted
+2024-10-27 23:53:12.386[1730044392386] | WARN  | http-nio-8888-exec-2 | o.s.j.support.SQLErrorCodesFactory   - Error while extracting database name - falling back to empty error codes
+org.springframework.jdbc.support.MetaDataAccessException: Could not get Connection for extracting meta-data; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: HikariDataSource HikariDataSource (masterDataSource) has been closed.
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:345)
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:373)
+	at org.springframework.jdbc.support.SQLErrorCodesFactory.getErrorCodes(SQLErrorCodesFactory.java:215)
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.setDataSource(SQLErrorCodeSQLExceptionTranslator.java:137)
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.<init>(SQLErrorCodeSQLExceptionTranslator.java:100)
+	at org.mybatis.spring.MyBatisExceptionTranslator.initExceptionTranslator(MyBatisExceptionTranslator.java:87)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:72)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy135.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:168)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:82)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:61)
+	at com.sun.proxy.$Proxy150.querySortEtfStockData(Unknown Source)
+	at com.caicongyang.stock.service.impl.TEtfServiceImpl.querySortEtfStockData(TEtfServiceImpl.java:73)
+	at com.caicongyang.stock.service.impl.TEtfServiceImpl$$FastClassBySpringCGLIB$$fd662a5f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:685)
+	at com.caicongyang.stock.service.impl.TEtfServiceImpl$$EnhancerBySpringCGLIB$$2f64eeaa.querySortEtfStockData(<generated>)
+	at com.caicongyang.stock.controllers.TEtfController.querySortEtfStockData(TEtfController.java:50)
+	at com.caicongyang.stock.controllers.TEtfController$$FastClassBySpringCGLIB$$2b0fba58.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at com.caicongyang.core.aspect.RequestLogAspect.doAround(RequestLogAspect.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:62)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:53)
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:365)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:420)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:345)
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.caicongyang.stock.controllers.TEtfController$$EnhancerBySpringCGLIB$$94747797.querySortEtfStockData(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: HikariDataSource HikariDataSource (masterDataSource) has been closed.
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:82)
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:336)
+	... 104 common frames omitted
+Caused by: java.sql.SQLException: HikariDataSource HikariDataSource (masterDataSource) has been closed.
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:96)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79)
+	... 105 common frames omitted
+2024-10-27 23:53:12.387[1730044392387] | ERROR | http-nio-8888-exec-2 | c.c.stock.controllers.TEtfController - 查询当天的etf股票异动数据失败
+org.springframework.dao.RecoverableDataAccessException: 
+### Error querying database.  Cause: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 135 milliseconds ago. The last packet sent successfully to the server was 254 milliseconds ago.
+### The error may exist in file [/Users/caicongyang/IdeaProjects/stock/target/classes/mapper/TEtfMapper.xml]
+### The error may involve com.caicongyang.stock.mapper.TEtfMapper.querySortEtfStockData-Inline
+### The error occurred while setting parameters
+### SQL: SELECT         t1.stock_code,         t1.volume / t2.volume AS last_day_compare         FROM         t_etf t1         LEFT JOIN ( SELECT volume, stock_code FROM t_etf WHERE trade_date = ? ) t2 ON t2.stock_code =         t1.stock_code         WHERE         t1.trade_date = ?         AND t1.volume IS NOT NULL         AND t2.volume is not null         and t1.volume > 10000000 -- 成交金额大于一千万         ORDER BY         t1.volume / t2.volume DESC
+### Cause: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 135 milliseconds ago. The last packet sent successfully to the server was 254 milliseconds ago.
+; Communications link failure
+
+The last packet successfully received from the server was 135 milliseconds ago. The last packet sent successfully to the server was 254 milliseconds ago.; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 135 milliseconds ago. The last packet sent successfully to the server was 254 milliseconds ago.
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:100)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy135.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:168)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:82)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:61)
+	at com.sun.proxy.$Proxy150.querySortEtfStockData(Unknown Source)
+	at com.caicongyang.stock.service.impl.TEtfServiceImpl.querySortEtfStockData(TEtfServiceImpl.java:73)
+	at com.caicongyang.stock.service.impl.TEtfServiceImpl$$FastClassBySpringCGLIB$$fd662a5f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:685)
+	at com.caicongyang.stock.service.impl.TEtfServiceImpl$$EnhancerBySpringCGLIB$$2f64eeaa.querySortEtfStockData(<generated>)
+	at com.caicongyang.stock.controllers.TEtfController.querySortEtfStockData(TEtfController.java:50)
+	at com.caicongyang.stock.controllers.TEtfController$$FastClassBySpringCGLIB$$2b0fba58.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at com.caicongyang.core.aspect.RequestLogAspect.doAround(RequestLogAspect.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:62)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:53)
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:365)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:420)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:345)
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.caicongyang.stock.controllers.TEtfController$$EnhancerBySpringCGLIB$$94747797.querySortEtfStockData(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 135 milliseconds ago. The last packet sent successfully to the server was 254 milliseconds ago.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 97 common frames omitted
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 135 milliseconds ago. The last packet sent successfully to the server was 254 milliseconds ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:538)
+	at com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:702)
+	at com.mysql.cj.protocol.a.NativeProtocol.sendCommand(NativeProtocol.java:641)
+	at com.mysql.cj.protocol.a.NativeProtocol.sendQueryPacket(NativeProtocol.java:940)
+	at com.mysql.cj.NativeSession.execSQL(NativeSession.java:1075)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:930)
+	... 114 common frames omitted
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:940)
+	at sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+	at java.io.FilterInputStream.read(FilterInputStream.java:133)
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:64)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:63)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:45)
+	at com.mysql.cj.protocol.a.TimeTrackingPacketReader.readHeader(TimeTrackingPacketReader.java:52)
+	at com.mysql.cj.protocol.a.TimeTrackingPacketReader.readHeader(TimeTrackingPacketReader.java:41)
+	at com.mysql.cj.protocol.a.MultiPacketReader.readHeader(MultiPacketReader.java:54)
+	at com.mysql.cj.protocol.a.MultiPacketReader.readHeader(MultiPacketReader.java:44)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:532)
+	... 119 common frames omitted
+2024-10-27 23:53:16.047[1730044396047] | INFO  | restartedMain | o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-27 23:53:16.372[1730044396372] | INFO  | restartedMain | com.caicongyang.stock.Application    - No active profile set, falling back to default profiles: default
+2024-10-27 23:53:17.151[1730044397151] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'commonMapper' and 'com.caicongyang.stock.mapper.CommonMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:53:17.151[1730044397151] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'studentMapper' and 'com.caicongyang.stock.mapper.StudentMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:53:17.151[1730044397151] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TEtfHigherMapper' and 'com.caicongyang.stock.mapper.TEtfHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:53:17.151[1730044397151] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TEtfMapper' and 'com.caicongyang.stock.mapper.TEtfMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:53:17.152[1730044397152] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TIndustryStockMapper' and 'com.caicongyang.stock.mapper.TIndustryStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:53:17.152[1730044397152] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockHigherMapper' and 'com.caicongyang.stock.mapper.TStockHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:53:17.152[1730044397152] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockLimitMapper' and 'com.caicongyang.stock.mapper.TStockLimitMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:53:17.152[1730044397152] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockMainMapper' and 'com.caicongyang.stock.mapper.TStockMainMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:53:17.152[1730044397152] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockMapper' and 'com.caicongyang.stock.mapper.TStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:53:17.152[1730044397152] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockWeekHigherMapper' and 'com.caicongyang.stock.mapper.TStockWeekHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:53:17.152[1730044397152] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockWeekMapper' and 'com.caicongyang.stock.mapper.TStockWeekMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:53:17.152[1730044397152] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TTransactionEtfMapper' and 'com.caicongyang.stock.mapper.TTransactionEtfMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:53:17.152[1730044397152] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TTransactionStockMapper' and 'com.caicongyang.stock.mapper.TTransactionStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:53:17.152[1730044397152] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TVolumeIncreaseMapper' and 'com.caicongyang.stock.mapper.TVolumeIncreaseMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:53:17.152[1730044397152] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - No MyBatis mapper was found in '[com.caicongyang.stock.mapper]' package. Please check your configuration.
+2024-10-27 23:53:17.597[1730044397597] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-10-27 23:53:17.600[1730044397600] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2024-10-27 23:53:17.639[1730044397639] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23ms. Found 0 repository interfaces.
+2024-10-27 23:53:17.960[1730044397960] | INFO  | restartedMain | o.s.cloud.context.scope.GenericScope - BeanFactory id=5139f72e-3f62-38f4-a7f4-97574f600804
+2024-10-27 23:53:18.344[1730044398344] | INFO  | restartedMain | o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-10-27 23:53:19.355[1730044399355] | INFO  | restartedMain | o.s.b.w.e.tomcat.TomcatWebServer     - Tomcat initialized with port(s): 8888 (http)
+2024-10-27 23:53:19.366[1730044399366] | INFO  | restartedMain | o.a.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:53:19.366[1730044399366] | INFO  | restartedMain | o.a.catalina.core.StandardService    - Starting service [Tomcat]
+2024-10-27 23:53:19.366[1730044399366] | INFO  | restartedMain | o.a.catalina.core.StandardEngine     - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2024-10-27 23:53:19.457[1730044399457] | INFO  | restartedMain | o.a.c.c.C.[Tomcat].[localhost].[/]   - Initializing Spring embedded WebApplicationContext
+2024-10-27 23:53:19.457[1730044399457] | INFO  | restartedMain | o.s.web.context.ContextLoader        - Root WebApplicationContext: initialization completed in 3062 ms
+2024-10-27 23:53:19.724[1730044399724] | WARN  | restartedMain | c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2024-10-27 23:53:19.725[1730044399725] | INFO  | restartedMain | c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2024-10-27 23:53:19.751[1730044399751] | INFO  | restartedMain | c.n.config.DynamicPropertyFactory    - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@34de5c39
+2024-10-27 23:53:20.226[1730044400226] | INFO  | restartedMain | org.redisson.Version                 - Redisson 3.11.6
+2024-10-27 23:53:20.681[1730044400681] | INFO  | redisson-netty-2-31 | o.r.c.p.MasterPubSubConnectionPool   - 1 connections initialized for 159.138.152.92/159.138.152.92:3373
+2024-10-27 23:53:20.749[1730044400749] | INFO  | redisson-netty-2-19 | o.r.c.pool.MasterConnectionPool      - 24 connections initialized for 159.138.152.92/159.138.152.92:3373
+2024-10-27 23:53:21.095[1730044401095] | INFO  | restartedMain | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Starting...
+2024-10-27 23:53:24.121[1730044404121] | INFO  | restartedMain | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Start completed.
+2024-10-27 23:53:24.300[1730044404300] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TEtfHigher.
+2024-10-27 23:53:24.333[1730044404333] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TEtf.
+2024-10-27 23:53:24.362[1730044404362] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockHigher.
+2024-10-27 23:53:24.388[1730044404388] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockLimit.
+2024-10-27 23:53:24.410[1730044404410] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockMain.
+2024-10-27 23:53:24.438[1730044404438] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStock.
+2024-10-27 23:53:24.463[1730044404463] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockWeekHigher.
+2024-10-27 23:53:24.493[1730044404493] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockWeek.
+2024-10-27 23:53:24.520[1730044404520] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TTransactionEtf.
+2024-10-27 23:53:24.587[1730044404587] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TTransactionStock.
+2024-10-27 23:53:24.791[1730044404791] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TIndustryStock.
+2024-10-27 23:53:25.153[1730044405153] | INFO  | restartedMain | o.s.s.c.ThreadPoolTaskExecutor       - Initializing ExecutorService 'asyncTaskExecutor'
+2024-10-27 23:53:25.674[1730044405674] | INFO  | restartedMain | o.s.b.a.e.web.EndpointLinksResolver  - Exposing 4 endpoint(s) beneath base path '/actuator'
+2024-10-27 23:53:25.819[1730044405819] | INFO  | restartedMain | s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2024-10-27 23:53:25.845[1730044405845] | WARN  | restartedMain | o.s.c.n.a.ArchaiusAutoConfiguration  - No spring.application.name found, defaulting to 'application'
+2024-10-27 23:53:25.846[1730044405846] | WARN  | restartedMain | c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2024-10-27 23:53:25.846[1730044405846] | INFO  | restartedMain | c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2024-10-27 23:53:26.094[1730044406094] | INFO  | restartedMain | o.s.b.d.a.OptionalLiveReloadServer   - LiveReload server is running on port 35729
+2024-10-27 23:53:26.155[1730044406155] | INFO  | restartedMain | o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2024-10-27 23:53:27.021[1730044407021] | INFO  | restartedMain | o.s.s.c.ThreadPoolTaskScheduler      - Initializing ExecutorService 'taskScheduler'
+2024-10-27 23:53:27.233[1730044407233] | INFO  | restartedMain | s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2024-10-27 23:53:27.260[1730044407260] | INFO  | restartedMain | s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2024-10-27 23:53:27.306[1730044407306] | INFO  | restartedMain | s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2024-10-27 23:53:27.596[1730044407596] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: calculateHigherStockUsingGET_1
+2024-10-27 23:53:27.642[1730044407642] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_1
+2024-10-27 23:53:27.658[1730044407658] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getTransactionStockDataUsingGET_1
+2024-10-27 23:53:27.669[1730044407669] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_1
+2024-10-27 23:53:27.671[1730044407671] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: deleteUsingDELETE_1
+2024-10-27 23:53:27.680[1730044407680] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_2
+2024-10-27 23:53:27.682[1730044407682] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: updateUsingPUT_1
+2024-10-27 23:53:27.712[1730044407712] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: setStudentByIdUsingPOST_1
+2024-10-27 23:53:27.744[1730044407744] | INFO  | restartedMain | o.a.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:53:27.763[1730044407763] | INFO  | restartedMain | o.s.b.w.e.tomcat.TomcatWebServer     - Tomcat started on port(s): 8888 (http) with context path ''
+2024-10-27 23:53:27.768[1730044407768] | INFO  | restartedMain | com.caicongyang.stock.Application    - Started Application in 12.244 seconds (JVM running for 13.154)
+2024-10-27 23:53:33.668[1730044413668] | INFO  | http-nio-8888-exec-1 | o.a.c.c.C.[Tomcat].[localhost].[/]   - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-27 23:53:33.668[1730044413668] | INFO  | http-nio-8888-exec-1 | o.s.web.servlet.DispatcherServlet    - Initializing Servlet 'dispatcherServlet'
+2024-10-27 23:53:33.683[1730044413683] | INFO  | http-nio-8888-exec-1 | o.s.web.servlet.DispatcherServlet    - Completed initialization in 15 ms
+2024-10-27 23:54:55.471[1730044495471] | WARN  | masterDataSource housekeeper | com.zaxxer.hikari.pool.HikariPool    - masterDataSource - Thread starvation or clock leap detected (housekeeper delta=58s883ms).
+2024-10-27 23:54:55.640[1730044495640] | INFO  | SpringContextShutdownHook | o.s.s.c.ThreadPoolTaskScheduler      - Shutting down ExecutorService 'taskScheduler'
+2024-10-27 23:54:55.647[1730044495647] | INFO  | SpringContextShutdownHook | o.s.s.c.ThreadPoolTaskExecutor       - Shutting down ExecutorService 'asyncTaskExecutor'
+2024-10-27 23:54:55.771[1730044495771] | INFO  | SpringContextShutdownHook | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Shutdown initiated...
+2024-10-27 23:54:55.778[1730044495778] | INFO  | SpringContextShutdownHook | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Shutdown completed.
+2024-10-27 23:55:01.962[1730044501962] | INFO  | restartedMain | o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-27 23:55:02.337[1730044502337] | INFO  | restartedMain | com.caicongyang.stock.Application    - No active profile set, falling back to default profiles: default
+2024-10-27 23:55:03.196[1730044503196] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'commonMapper' and 'com.caicongyang.stock.mapper.CommonMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:55:03.196[1730044503196] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'studentMapper' and 'com.caicongyang.stock.mapper.StudentMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:55:03.197[1730044503197] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TEtfHigherMapper' and 'com.caicongyang.stock.mapper.TEtfHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:55:03.197[1730044503197] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TEtfMapper' and 'com.caicongyang.stock.mapper.TEtfMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:55:03.197[1730044503197] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TIndustryStockMapper' and 'com.caicongyang.stock.mapper.TIndustryStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:55:03.197[1730044503197] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockHigherMapper' and 'com.caicongyang.stock.mapper.TStockHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:55:03.197[1730044503197] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockLimitMapper' and 'com.caicongyang.stock.mapper.TStockLimitMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:55:03.197[1730044503197] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockMainMapper' and 'com.caicongyang.stock.mapper.TStockMainMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:55:03.197[1730044503197] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockMapper' and 'com.caicongyang.stock.mapper.TStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:55:03.197[1730044503197] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockWeekHigherMapper' and 'com.caicongyang.stock.mapper.TStockWeekHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:55:03.197[1730044503197] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockWeekMapper' and 'com.caicongyang.stock.mapper.TStockWeekMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:55:03.197[1730044503197] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TTransactionEtfMapper' and 'com.caicongyang.stock.mapper.TTransactionEtfMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:55:03.197[1730044503197] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TTransactionStockMapper' and 'com.caicongyang.stock.mapper.TTransactionStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:55:03.197[1730044503197] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TVolumeIncreaseMapper' and 'com.caicongyang.stock.mapper.TVolumeIncreaseMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:55:03.198[1730044503198] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - No MyBatis mapper was found in '[com.caicongyang.stock.mapper]' package. Please check your configuration.
+2024-10-27 23:55:03.683[1730044503683] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-10-27 23:55:03.686[1730044503686] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2024-10-27 23:55:03.720[1730044503720] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21ms. Found 0 repository interfaces.
+2024-10-27 23:55:04.070[1730044504070] | INFO  | restartedMain | o.s.cloud.context.scope.GenericScope - BeanFactory id=5139f72e-3f62-38f4-a7f4-97574f600804
+2024-10-27 23:55:04.459[1730044504459] | INFO  | restartedMain | o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-10-27 23:55:05.509[1730044505509] | INFO  | restartedMain | o.s.b.w.e.tomcat.TomcatWebServer     - Tomcat initialized with port(s): 8888 (http)
+2024-10-27 23:55:05.522[1730044505522] | INFO  | restartedMain | o.a.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:55:05.522[1730044505522] | INFO  | restartedMain | o.a.catalina.core.StandardService    - Starting service [Tomcat]
+2024-10-27 23:55:05.522[1730044505522] | INFO  | restartedMain | o.a.catalina.core.StandardEngine     - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2024-10-27 23:55:05.624[1730044505624] | INFO  | restartedMain | o.a.c.c.C.[Tomcat].[localhost].[/]   - Initializing Spring embedded WebApplicationContext
+2024-10-27 23:55:05.624[1730044505624] | INFO  | restartedMain | o.s.web.context.ContextLoader        - Root WebApplicationContext: initialization completed in 3259 ms
+2024-10-27 23:55:05.843[1730044505843] | WARN  | restartedMain | c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2024-10-27 23:55:05.843[1730044505843] | INFO  | restartedMain | c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2024-10-27 23:55:05.859[1730044505859] | INFO  | restartedMain | c.n.config.DynamicPropertyFactory    - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@35cdef68
+2024-10-27 23:55:06.281[1730044506281] | INFO  | restartedMain | org.redisson.Version                 - Redisson 3.11.6
+2024-10-27 23:55:06.761[1730044506761] | INFO  | redisson-netty-2-4 | o.r.c.p.MasterPubSubConnectionPool   - 1 connections initialized for 159.138.152.92/159.138.152.92:3373
+2024-10-27 23:55:06.789[1730044506789] | INFO  | redisson-netty-2-19 | o.r.c.pool.MasterConnectionPool      - 24 connections initialized for 159.138.152.92/159.138.152.92:3373
+2024-10-27 23:55:07.042[1730044507042] | INFO  | restartedMain | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Starting...
+2024-10-27 23:55:09.636[1730044509636] | INFO  | restartedMain | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Start completed.
+2024-10-27 23:55:09.826[1730044509826] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TEtfHigher.
+2024-10-27 23:55:09.869[1730044509869] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TEtf.
+2024-10-27 23:55:09.902[1730044509902] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockHigher.
+2024-10-27 23:55:09.929[1730044509929] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockLimit.
+2024-10-27 23:55:09.954[1730044509954] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockMain.
+2024-10-27 23:55:09.977[1730044509977] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStock.
+2024-10-27 23:55:10.001[1730044510001] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockWeekHigher.
+2024-10-27 23:55:10.026[1730044510026] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockWeek.
+2024-10-27 23:55:10.048[1730044510048] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TTransactionEtf.
+2024-10-27 23:55:10.104[1730044510104] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TTransactionStock.
+2024-10-27 23:55:10.311[1730044510311] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TIndustryStock.
+2024-10-27 23:55:10.648[1730044510648] | INFO  | restartedMain | o.s.s.c.ThreadPoolTaskExecutor       - Initializing ExecutorService 'asyncTaskExecutor'
+2024-10-27 23:55:11.181[1730044511181] | INFO  | restartedMain | o.s.b.a.e.web.EndpointLinksResolver  - Exposing 4 endpoint(s) beneath base path '/actuator'
+2024-10-27 23:55:11.323[1730044511323] | INFO  | restartedMain | s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2024-10-27 23:55:11.348[1730044511348] | WARN  | restartedMain | o.s.c.n.a.ArchaiusAutoConfiguration  - No spring.application.name found, defaulting to 'application'
+2024-10-27 23:55:11.349[1730044511349] | WARN  | restartedMain | c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2024-10-27 23:55:11.349[1730044511349] | INFO  | restartedMain | c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2024-10-27 23:55:11.585[1730044511585] | INFO  | restartedMain | o.s.b.d.a.OptionalLiveReloadServer   - LiveReload server is running on port 35729
+2024-10-27 23:55:11.640[1730044511640] | INFO  | restartedMain | o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2024-10-27 23:55:12.541[1730044512541] | INFO  | restartedMain | o.s.s.c.ThreadPoolTaskScheduler      - Initializing ExecutorService 'taskScheduler'
+2024-10-27 23:55:12.695[1730044512695] | INFO  | restartedMain | s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2024-10-27 23:55:12.718[1730044512718] | INFO  | restartedMain | s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2024-10-27 23:55:12.773[1730044512773] | INFO  | restartedMain | s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2024-10-27 23:55:13.067[1730044513067] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: calculateHigherStockUsingGET_1
+2024-10-27 23:55:13.115[1730044513115] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_1
+2024-10-27 23:55:13.132[1730044513132] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getTransactionStockDataUsingGET_1
+2024-10-27 23:55:13.144[1730044513144] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_1
+2024-10-27 23:55:13.147[1730044513147] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: deleteUsingDELETE_1
+2024-10-27 23:55:13.157[1730044513157] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_2
+2024-10-27 23:55:13.160[1730044513160] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: updateUsingPUT_1
+2024-10-27 23:55:13.191[1730044513191] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: setStudentByIdUsingPOST_1
+2024-10-27 23:55:13.221[1730044513221] | INFO  | restartedMain | o.a.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:55:13.242[1730044513242] | INFO  | restartedMain | o.s.b.w.e.tomcat.TomcatWebServer     - Tomcat started on port(s): 8888 (http) with context path ''
+2024-10-27 23:55:13.247[1730044513247] | INFO  | restartedMain | com.caicongyang.stock.Application    - Started Application in 11.976 seconds (JVM running for 12.771)
+2024-10-27 23:55:17.016[1730044517016] | INFO  | http-nio-8888-exec-1 | o.a.c.c.C.[Tomcat].[localhost].[/]   - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-27 23:55:17.016[1730044517016] | INFO  | http-nio-8888-exec-1 | o.s.web.servlet.DispatcherServlet    - Initializing Servlet 'dispatcherServlet'
+2024-10-27 23:55:17.029[1730044517029] | INFO  | http-nio-8888-exec-1 | o.s.web.servlet.DispatcherServlet    - Completed initialization in 13 ms
+2024-10-27 23:57:14.337[1730044634337] | INFO  | SpringContextShutdownHook | o.s.s.c.ThreadPoolTaskScheduler      - Shutting down ExecutorService 'taskScheduler'
+2024-10-27 23:57:14.341[1730044634341] | INFO  | SpringContextShutdownHook | o.s.s.c.ThreadPoolTaskExecutor       - Shutting down ExecutorService 'asyncTaskExecutor'
+2024-10-27 23:57:14.455[1730044634455] | INFO  | SpringContextShutdownHook | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Shutdown initiated...
+2024-10-27 23:57:14.461[1730044634461] | INFO  | SpringContextShutdownHook | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Shutdown completed.
+2024-10-27 23:57:17.989[1730044637989] | INFO  | restartedMain | o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-27 23:57:18.318[1730044638318] | INFO  | restartedMain | com.caicongyang.stock.Application    - No active profile set, falling back to default profiles: default
+2024-10-27 23:57:19.133[1730044639133] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'commonMapper' and 'com.caicongyang.stock.mapper.CommonMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:57:19.133[1730044639133] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'studentMapper' and 'com.caicongyang.stock.mapper.StudentMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:57:19.134[1730044639134] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TEtfHigherMapper' and 'com.caicongyang.stock.mapper.TEtfHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:57:19.134[1730044639134] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TEtfMapper' and 'com.caicongyang.stock.mapper.TEtfMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:57:19.134[1730044639134] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TIndustryStockMapper' and 'com.caicongyang.stock.mapper.TIndustryStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:57:19.134[1730044639134] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockHigherMapper' and 'com.caicongyang.stock.mapper.TStockHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:57:19.134[1730044639134] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockLimitMapper' and 'com.caicongyang.stock.mapper.TStockLimitMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:57:19.134[1730044639134] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockMainMapper' and 'com.caicongyang.stock.mapper.TStockMainMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:57:19.134[1730044639134] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockMapper' and 'com.caicongyang.stock.mapper.TStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:57:19.134[1730044639134] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockWeekHigherMapper' and 'com.caicongyang.stock.mapper.TStockWeekHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:57:19.134[1730044639134] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockWeekMapper' and 'com.caicongyang.stock.mapper.TStockWeekMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:57:19.134[1730044639134] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TTransactionEtfMapper' and 'com.caicongyang.stock.mapper.TTransactionEtfMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:57:19.134[1730044639134] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TTransactionStockMapper' and 'com.caicongyang.stock.mapper.TTransactionStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:57:19.134[1730044639134] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TVolumeIncreaseMapper' and 'com.caicongyang.stock.mapper.TVolumeIncreaseMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:57:19.135[1730044639135] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - No MyBatis mapper was found in '[com.caicongyang.stock.mapper]' package. Please check your configuration.
+2024-10-27 23:57:19.573[1730044639573] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-10-27 23:57:19.576[1730044639576] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2024-10-27 23:57:19.613[1730044639613] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21ms. Found 0 repository interfaces.
+2024-10-27 23:57:19.954[1730044639954] | INFO  | restartedMain | o.s.cloud.context.scope.GenericScope - BeanFactory id=5139f72e-3f62-38f4-a7f4-97574f600804
+2024-10-27 23:57:20.341[1730044640341] | INFO  | restartedMain | o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-10-27 23:57:21.378[1730044641378] | INFO  | restartedMain | o.s.b.w.e.tomcat.TomcatWebServer     - Tomcat initialized with port(s): 8888 (http)
+2024-10-27 23:57:21.388[1730044641388] | INFO  | restartedMain | o.a.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:57:21.389[1730044641389] | INFO  | restartedMain | o.a.catalina.core.StandardService    - Starting service [Tomcat]
+2024-10-27 23:57:21.389[1730044641389] | INFO  | restartedMain | o.a.catalina.core.StandardEngine     - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2024-10-27 23:57:21.471[1730044641471] | INFO  | restartedMain | o.a.c.c.C.[Tomcat].[localhost].[/]   - Initializing Spring embedded WebApplicationContext
+2024-10-27 23:57:21.472[1730044641472] | INFO  | restartedMain | o.s.web.context.ContextLoader        - Root WebApplicationContext: initialization completed in 3127 ms
+2024-10-27 23:57:21.701[1730044641701] | WARN  | restartedMain | c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2024-10-27 23:57:21.701[1730044641701] | INFO  | restartedMain | c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2024-10-27 23:57:21.718[1730044641718] | INFO  | restartedMain | c.n.config.DynamicPropertyFactory    - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@28133ba5
+2024-10-27 23:57:22.178[1730044642178] | INFO  | restartedMain | org.redisson.Version                 - Redisson 3.11.6
+2024-10-27 23:57:22.765[1730044642765] | INFO  | redisson-netty-2-30 | o.r.c.p.MasterPubSubConnectionPool   - 1 connections initialized for 159.138.152.92/159.138.152.92:3373
+2024-10-27 23:57:23.954[1730044643954] | INFO  | redisson-netty-2-19 | o.r.c.pool.MasterConnectionPool      - 24 connections initialized for 159.138.152.92/159.138.152.92:3373
+2024-10-27 23:57:24.241[1730044644241] | INFO  | restartedMain | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Starting...
+2024-10-27 23:57:29.758[1730044649758] | INFO  | restartedMain | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Start completed.
+2024-10-27 23:57:29.940[1730044649940] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TEtfHigher.
+2024-10-27 23:57:29.975[1730044649975] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TEtf.
+2024-10-27 23:57:30.003[1730044650003] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockHigher.
+2024-10-27 23:57:30.026[1730044650026] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockLimit.
+2024-10-27 23:57:30.048[1730044650048] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockMain.
+2024-10-27 23:57:30.069[1730044650069] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStock.
+2024-10-27 23:57:30.092[1730044650092] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockWeekHigher.
+2024-10-27 23:57:30.113[1730044650113] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockWeek.
+2024-10-27 23:57:30.137[1730044650137] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TTransactionEtf.
+2024-10-27 23:57:30.190[1730044650190] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TTransactionStock.
+2024-10-27 23:57:30.404[1730044650404] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TIndustryStock.
+2024-10-27 23:57:30.741[1730044650741] | INFO  | restartedMain | o.s.s.c.ThreadPoolTaskExecutor       - Initializing ExecutorService 'asyncTaskExecutor'
+2024-10-27 23:57:31.302[1730044651302] | INFO  | restartedMain | o.s.b.a.e.web.EndpointLinksResolver  - Exposing 4 endpoint(s) beneath base path '/actuator'
+2024-10-27 23:57:31.454[1730044651454] | INFO  | restartedMain | s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2024-10-27 23:57:31.482[1730044651482] | WARN  | restartedMain | o.s.c.n.a.ArchaiusAutoConfiguration  - No spring.application.name found, defaulting to 'application'
+2024-10-27 23:57:31.483[1730044651483] | WARN  | restartedMain | c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2024-10-27 23:57:31.483[1730044651483] | INFO  | restartedMain | c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2024-10-27 23:57:31.745[1730044651745] | INFO  | restartedMain | o.s.b.d.a.OptionalLiveReloadServer   - LiveReload server is running on port 35729
+2024-10-27 23:57:31.806[1730044651806] | INFO  | restartedMain | o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2024-10-27 23:57:32.708[1730044652708] | INFO  | restartedMain | o.s.s.c.ThreadPoolTaskScheduler      - Initializing ExecutorService 'taskScheduler'
+2024-10-27 23:57:32.873[1730044652873] | INFO  | restartedMain | s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2024-10-27 23:57:32.899[1730044652899] | INFO  | restartedMain | s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2024-10-27 23:57:32.957[1730044652957] | INFO  | restartedMain | s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2024-10-27 23:57:33.235[1730044653235] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: calculateHigherStockUsingGET_1
+2024-10-27 23:57:33.284[1730044653284] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_1
+2024-10-27 23:57:33.299[1730044653299] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getTransactionStockDataUsingGET_1
+2024-10-27 23:57:33.312[1730044653312] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_1
+2024-10-27 23:57:33.315[1730044653315] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: deleteUsingDELETE_1
+2024-10-27 23:57:33.326[1730044653326] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_2
+2024-10-27 23:57:33.328[1730044653328] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: updateUsingPUT_1
+2024-10-27 23:57:33.360[1730044653360] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: setStudentByIdUsingPOST_1
+2024-10-27 23:57:33.389[1730044653389] | INFO  | restartedMain | o.a.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:57:33.409[1730044653409] | INFO  | restartedMain | o.s.b.w.e.tomcat.TomcatWebServer     - Tomcat started on port(s): 8888 (http) with context path ''
+2024-10-27 23:57:33.414[1730044653414] | INFO  | restartedMain | com.caicongyang.stock.Application    - Started Application in 15.943 seconds (JVM running for 16.718)
+2024-10-27 23:57:37.298[1730044657298] | INFO  | http-nio-8888-exec-1 | o.a.c.c.C.[Tomcat].[localhost].[/]   - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-27 23:57:37.298[1730044657298] | INFO  | http-nio-8888-exec-1 | o.s.web.servlet.DispatcherServlet    - Initializing Servlet 'dispatcherServlet'
+2024-10-27 23:57:37.313[1730044657313] | INFO  | http-nio-8888-exec-1 | o.s.web.servlet.DispatcherServlet    - Completed initialization in 15 ms
+2024-10-27 23:57:59.893[1730044679893] | INFO  | Thread-10  | o.s.s.c.ThreadPoolTaskScheduler      - Shutting down ExecutorService 'taskScheduler'
+2024-10-27 23:57:59.902[1730044679902] | INFO  | Thread-10  | o.s.s.c.ThreadPoolTaskExecutor       - Shutting down ExecutorService 'asyncTaskExecutor'
+2024-10-27 23:58:00.085[1730044680085] | INFO  | Thread-10  | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Shutdown initiated...
+2024-10-27 23:58:02.132[1730044682132] | ERROR | http-nio-8888-exec-4 | c.c.c.a.ExceptionControllerAdvice    - 全局异常拦截非捕获异常-
+org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'TEtfController': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:208)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.web.method.HandlerMethod.createWithResolvedBean(HandlerMethod.java:336)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:368)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.getHandlerInternal(RequestMappingHandlerMapping.java:449)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.getHandlerInternal(RequestMappingHandlerMapping.java:67)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:393)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1234)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1016)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2024-10-27 23:58:02.139[1730044682139] | WARN  | http-nio-8888-exec-4 | o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'TEtfController': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)]
+2024-10-27 23:58:07.807[1730044687807] | INFO  | Thread-10  | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Shutdown completed.
+2024-10-27 23:58:09.464[1730044689464] | INFO  | restartedMain | com.caicongyang.stock.Application    - No active profile set, falling back to default profiles: default
+2024-10-27 23:58:09.950[1730044689950] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'commonMapper' and 'com.caicongyang.stock.mapper.CommonMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:58:09.950[1730044689950] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'studentMapper' and 'com.caicongyang.stock.mapper.StudentMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:58:09.950[1730044689950] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TEtfHigherMapper' and 'com.caicongyang.stock.mapper.TEtfHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:58:09.950[1730044689950] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TEtfMapper' and 'com.caicongyang.stock.mapper.TEtfMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:58:09.950[1730044689950] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TIndustryStockMapper' and 'com.caicongyang.stock.mapper.TIndustryStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:58:09.950[1730044689950] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockHigherMapper' and 'com.caicongyang.stock.mapper.TStockHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:58:09.950[1730044689950] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockLimitMapper' and 'com.caicongyang.stock.mapper.TStockLimitMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:58:09.950[1730044689950] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockMainMapper' and 'com.caicongyang.stock.mapper.TStockMainMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:58:09.950[1730044689950] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockMapper' and 'com.caicongyang.stock.mapper.TStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:58:09.950[1730044689950] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockWeekHigherMapper' and 'com.caicongyang.stock.mapper.TStockWeekHigherMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:58:09.950[1730044689950] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TStockWeekMapper' and 'com.caicongyang.stock.mapper.TStockWeekMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:58:09.950[1730044689950] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TTransactionEtfMapper' and 'com.caicongyang.stock.mapper.TTransactionEtfMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:58:09.950[1730044689950] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TTransactionStockMapper' and 'com.caicongyang.stock.mapper.TTransactionStockMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:58:09.950[1730044689950] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - Skipping MapperFactoryBean with name 'TVolumeIncreaseMapper' and 'com.caicongyang.stock.mapper.TVolumeIncreaseMapper' mapperInterface. Bean already defined with the same name!
+2024-10-27 23:58:09.950[1730044689950] | WARN  | restartedMain | o.m.s.mapper.ClassPathMapperScanner  - No MyBatis mapper was found in '[com.caicongyang.stock.mapper]' package. Please check your configuration.
+2024-10-27 23:58:10.094[1730044690094] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-10-27 23:58:10.094[1730044690094] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2024-10-27 23:58:10.105[1730044690105] | INFO  | restartedMain | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
+2024-10-27 23:58:10.197[1730044690197] | INFO  | restartedMain | o.s.cloud.context.scope.GenericScope - BeanFactory id=5139f72e-3f62-38f4-a7f4-97574f600804
+2024-10-27 23:58:10.240[1730044690240] | INFO  | restartedMain | o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-10-27 23:58:10.400[1730044690400] | WARN  | restartedMain | o.a.tomcat.util.modeler.Registry     - The MBean registry cannot be disabled because it has already been initialised
+2024-10-27 23:58:10.450[1730044690450] | INFO  | restartedMain | o.s.b.w.e.tomcat.TomcatWebServer     - Tomcat initialized with port(s): 8888 (http)
+2024-10-27 23:58:10.451[1730044690451] | INFO  | restartedMain | o.a.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:58:10.451[1730044690451] | INFO  | restartedMain | o.a.catalina.core.StandardService    - Starting service [Tomcat]
+2024-10-27 23:58:10.451[1730044690451] | INFO  | restartedMain | o.a.catalina.core.StandardEngine     - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2024-10-27 23:58:10.467[1730044690467] | INFO  | restartedMain | o.a.c.c.C.[Tomcat].[localhost].[/]   - Initializing Spring embedded WebApplicationContext
+2024-10-27 23:58:10.467[1730044690467] | INFO  | restartedMain | o.s.web.context.ContextLoader        - Root WebApplicationContext: initialization completed in 999 ms
+2024-10-27 23:58:10.714[1730044690714] | INFO  | restartedMain | org.redisson.Version                 - Redisson 3.11.6
+2024-10-27 23:58:10.863[1730044690863] | INFO  | redisson-netty-5-6 | o.r.c.p.MasterPubSubConnectionPool   - 1 connections initialized for 159.138.152.92/159.138.152.92:3373
+2024-10-27 23:58:10.890[1730044690890] | INFO  | redisson-netty-5-19 | o.r.c.pool.MasterConnectionPool      - 24 connections initialized for 159.138.152.92/159.138.152.92:3373
+2024-10-27 23:58:10.993[1730044690993] | INFO  | restartedMain | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Starting...
+2024-10-27 23:58:13.822[1730044693822] | INFO  | restartedMain | com.zaxxer.hikari.HikariDataSource   - masterDataSource - Start completed.
+2024-10-27 23:58:13.881[1730044693881] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TEtfHigher.
+2024-10-27 23:58:13.923[1730044693923] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TEtf.
+2024-10-27 23:58:13.963[1730044693963] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockHigher.
+2024-10-27 23:58:14.000[1730044694000] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockLimit.
+2024-10-27 23:58:14.033[1730044694033] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockMain.
+2024-10-27 23:58:14.066[1730044694066] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStock.
+2024-10-27 23:58:14.100[1730044694100] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockWeekHigher.
+2024-10-27 23:58:14.138[1730044694138] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TStockWeek.
+2024-10-27 23:58:14.179[1730044694179] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TTransactionEtf.
+2024-10-27 23:58:14.253[1730044694253] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TTransactionStock.
+2024-10-27 23:58:14.405[1730044694405] | WARN  | restartedMain | c.b.m.core.toolkit.TableInfoHelper   - Warn: Could not find @TableId in Class: com.caicongyang.stock.domain.TIndustryStock.
+2024-10-27 23:58:14.716[1730044694716] | INFO  | restartedMain | o.s.s.c.ThreadPoolTaskExecutor       - Initializing ExecutorService 'asyncTaskExecutor'
+2024-10-27 23:58:15.081[1730044695081] | INFO  | restartedMain | o.s.b.a.e.web.EndpointLinksResolver  - Exposing 4 endpoint(s) beneath base path '/actuator'
+2024-10-27 23:58:15.198[1730044695198] | INFO  | restartedMain | s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2024-10-27 23:58:15.226[1730044695226] | WARN  | restartedMain | o.s.c.n.a.ArchaiusAutoConfiguration  - No spring.application.name found, defaulting to 'application'
+2024-10-27 23:58:15.227[1730044695227] | WARN  | restartedMain | c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2024-10-27 23:58:15.227[1730044695227] | INFO  | restartedMain | c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2024-10-27 23:58:15.343[1730044695343] | INFO  | restartedMain | o.s.b.d.a.OptionalLiveReloadServer   - LiveReload server is running on port 35729
+2024-10-27 23:58:15.352[1730044695352] | INFO  | restartedMain | o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2024-10-27 23:58:15.549[1730044695549] | INFO  | restartedMain | o.s.s.c.ThreadPoolTaskScheduler      - Initializing ExecutorService 'taskScheduler'
+2024-10-27 23:58:15.630[1730044695630] | INFO  | restartedMain | s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2024-10-27 23:58:15.631[1730044695631] | INFO  | restartedMain | s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2024-10-27 23:58:15.641[1730044695641] | INFO  | restartedMain | s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2024-10-27 23:58:15.727[1730044695727] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: calculateHigherStockUsingGET_1
+2024-10-27 23:58:15.764[1730044695764] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_1
+2024-10-27 23:58:15.777[1730044695777] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: getTransactionStockDataUsingGET_1
+2024-10-27 23:58:15.786[1730044695786] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_1
+2024-10-27 23:58:15.788[1730044695788] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: deleteUsingDELETE_1
+2024-10-27 23:58:15.795[1730044695795] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_2
+2024-10-27 23:58:15.797[1730044695797] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: updateUsingPUT_1
+2024-10-27 23:58:15.864[1730044695864] | INFO  | restartedMain | s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: setStudentByIdUsingPOST_1
+2024-10-27 23:58:15.877[1730044695877] | INFO  | restartedMain | o.a.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:58:15.880[1730044695880] | INFO  | restartedMain | o.s.b.w.e.tomcat.TomcatWebServer     - Tomcat started on port(s): 8888 (http) with context path ''
+2024-10-27 23:58:15.882[1730044695882] | INFO  | restartedMain | com.caicongyang.stock.Application    - Started Application in 6.545 seconds (JVM running for 59.197)
+2024-10-27 23:58:15.885[1730044695885] | INFO  | restartedMain | o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-10-27 23:58:16.006[1730044696006] | INFO  | http-nio-8888-exec-1 | o.a.c.c.C.[Tomcat].[localhost].[/]   - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-27 23:58:16.006[1730044696006] | INFO  | http-nio-8888-exec-1 | o.s.web.servlet.DispatcherServlet    - Initializing Servlet 'dispatcherServlet'
+2024-10-27 23:58:16.017[1730044696017] | INFO  | http-nio-8888-exec-1 | o.s.web.servlet.DispatcherServlet    - Completed initialization in 11 ms
