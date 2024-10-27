@@ -1,7 +1,9 @@
-package com.caicongyang.mapper;
+package com.caicongyang.stock.mapper;
 
-import com.caicongyang.domain.TVolumeIncrease;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.caicongyang.stock.domain.TVolumeIncrease;
+
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +13,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author caicongyang
  * @since 2024-10-27
  */
+@Mapper
 public interface TVolumeIncreaseMapper extends BaseMapper<TVolumeIncrease> {
-
+    // 可以添加自定义的SQL方法
 }

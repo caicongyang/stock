@@ -3,16 +3,14 @@ package com.caicongyang.stock.service.impl;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.caicongyang.httper.HttpClientProvider;
-import com.caicongyang.stock.domain.TStock;
-import com.caicongyang.stock.domain.TStockMain;
-import com.caicongyang.stock.domain.TTransactionStock;
-import com.caicongyang.stock.domain.TTransactionStockDTO;
+import com.caicongyang.stock.domain.*;
 import com.caicongyang.stock.mail.MailService;
 import com.caicongyang.stock.mapper.CommonMapper;
 import com.caicongyang.stock.mapper.TStockMapper;
 import com.caicongyang.stock.mapper.TTransactionStockMapper;
 import com.caicongyang.stock.service.ITStockMainService;
 import com.caicongyang.stock.service.StockService;
+import com.caicongyang.stock.service.ITIndustryStockService;
 import com.caicongyang.stock.utils.TomDateUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +22,6 @@ import org.springframework.util.CollectionUtils;
 import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.text.ParseException;
-import java.time.LocalDate;
 import java.util.*;
 
 /**
@@ -59,7 +56,16 @@ public class StockServiceImpl implements StockService {
 
 
     @Autowired
+    private ITVolumeIncreaseService volumeIncreaseService;
+
+
+    @Autowired
     private MailService mailService;
+
+
+    @Autowired
+    private ITIndustryStockService industryStockService;
+
 
     @Override
     public Boolean TradeFlag() {
@@ -142,29 +148,22 @@ public class StockServiceImpl implements StockService {
     }
 
     @Override
-    public List<TTransactionStockDTO> getTransactionStockData(String currentDate) throws Exception {
-        TTransactionStock stock = new TTransactionStock();
-        stock.setTradingDay(currentDate);
-        Wrapper<TTransactionStock> wrapper = new QueryWrapper<>(stock);
-        List<TTransactionStock> reuslt = tTransactionStockMapper.selectList(wrapper);
+    public List<TVolumeIncreaseDTO> getTransactionStockData(String currentDate) throws Exception {
+        List<TVolumeIncreaseDTO> result = commonMapper.getTransactionStockDataWithIndustry(currentDate);
 
-        //如果当天没有，则获取最近一个交易日
-        if (CollectionUtils.isEmpty(reuslt)) {
+        if (CollectionUtils.isEmpty(result)) {
             String lastTradingDate = commonMapper.queryLastTradingDate();
-            stock.setTradingDay(lastTradingDate);
-            reuslt = tTransactionStockMapper.selectList(wrapper);
+            result = commonMapper.getTransactionStockDataWithIndustry(lastTradingDate);
         }
 
-        List<TTransactionStockDTO> returnList = new ArrayList<>();
-        if (org.apache.commons.collections.CollectionUtils.isNotEmpty(reuslt)) {
-            for (TTransactionStock item : reuslt) {
-                TTransactionStockDTO dto = new TTransactionStockDTO();
-                BeanUtils.copyProperties(item, dto);
-//                dto.setStockName(itStockMainService.getStockNameByStockCode(item.getStockCode()));
-                returnList.add(dto);
+        // 处理可能的空值
+        for (TVolumeIncreaseDTO dto : result) {
+            if (dto.getIndustryName() == null) {
+                dto.setIndustryName("未分类");
             }
         }
-        return returnList;
+
+        return result;
     }
 
 
@@ -177,8 +176,14 @@ public class StockServiceImpl implements StockService {
     }
 
     @Override
-    public List<TTransactionStockDTO> getTransactionAndClose2TenDayAvgStockData(String currentDate) {
-        return commonMapper.getTransactionAndClose2TenDayAvgStockData(currentDate);
+    public List<TVolumeIncreaseDTO> getTransactionAndClose2TenDayAvgStockData(String currentDate) {
+        List<TVolumeIncreaseDTO> result = commonMapper.getTransactionAndClose2TenDayAvgStockData(currentDate);
+
+        if (CollectionUtils.isEmpty(result)) {
+            String lastTradingDate = commonMapper.queryLastTradingDate();
+            result = commonMapper.getTransactionAndClose2TenDayAvgStockData(lastTradingDate);
+        }
+        return  result;
     }
 
 

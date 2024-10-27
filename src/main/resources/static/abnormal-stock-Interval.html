@@ -25,10 +25,9 @@
             <tr>
                 <th data-priority="1">股票代码</th>
                 <th data-priority="2">股票名称</th>
-                <th data-priority="3">异动次数</th>
-                <th data-priority="4">swL3</th>
-                <th data-priority="5">jqL2</th>
-                <th data-priority="6">zjw</th>
+                <th data-priority="3">行业名称</th>
+                <th data-priority="4">异动次数</th>
+                <th data-priority="5">交易日期</th>
             </tr>
             </thead>
             <tbody id="tbodydata">
@@ -42,16 +41,40 @@
 </div>
 
 <script>
+
+
+    function getBeforeDate(day, str) {
+        var now = new Date().getTime(); //获取毫秒数
+        var before = new Date(now - ((day > 0 && day ? day : 0) * 86400 * 1000));
+        var year = before.getFullYear();
+        var month = before.getMonth() + 1;
+        var date = before.getDate();
+        return year + (str ? str : '-') + (month < 10 ? '0' + month : month) + (str ? str : '-') + (date < 10 ? '0' + date : date)
+    }
+
     $(document).on("pagecreate", "#abnormal-stock-Interval", function() {
-        var startDate = GetQueryValue('startDate');
-        var endDate = GetQueryValue('endDate');
+        var day = new Date();
+        day.setTime(day.getTime());
+        dayStr = day.getDate() < 10 ? '0' + day.getDate() : day.getDate();
+        var monStr;
+        if ((day.getMonth() + 1) < 10) {
+            monStr = '0' + (day.getMonth() + 1);
+        } else {
+            monStr = (day.getMonth() + 1);
+        }
+
+
+        var endDate = day.getFullYear() + "-" + monStr + "-" + dayStr;
+        var startDate = getBeforeDate(30)
+
+        $("#titleData").text(startDate + "~" + endDate + "异动股票");
         if (startDate && endDate) {
             loadData(startDate, endDate);
         }
     });
 
     function loadData(startDate, endDate) {
-        $.get("/stock/getAbnormalStockInterval",
+        $.get("/stock/getIntervalTransactionStockData",
             {
                 startDate: startDate,
                 endDate: endDate
@@ -62,14 +85,13 @@
                     var html = "";
                     if (optionJson.length > 0) {
                         for (var i = 0; i < optionJson.length; i++) {
-                            var url = "https://m.10jqka.com.cn/stockpage/hs_" + optionJson[i].stockCode.split(".")[0] + "/#&atab=geguNews";
+                            var url = "https://m.10jqka.com.cn/stockpage/hs_" + optionJson[i].stockCode + "/#&atab=geguNews";
                             html += "<tr>";
-                            html += "<td><a href='" + url + "' target='_blank'>" + optionJson[i].stockCode.split(".")[0] + "</a></td>";
+                            html += "<td><a href='" + url + "' target='_blank'>" + optionJson[i].stockCode + "</a></td>";
                             html += "<td>" + optionJson[i].stockName + "</td>";
-                            html += "<td>" + optionJson[i].abnormalCount + "</td>";
-                            html += "<td>" + optionJson[i].swL3 + "</td>";
-                            html += "<td>" + optionJson[i].jqL2 + "</td>";
-                            html += "<td>" + optionJson[i].zjw + "</td>";
+                            html += "<td>" + (optionJson[i].industryName || '未分类') + "</td>";
+                            html += "<td>" + optionJson[i].counter + "</td>";
+                            html += "<td>" + optionJson[i].tradeDate + "</td>";
                             html += "</tr>";
                         }
                         $("#titleData").text(startDate + " 到 " + endDate + " 异动股票区间");

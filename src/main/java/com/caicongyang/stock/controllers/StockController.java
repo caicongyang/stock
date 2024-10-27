@@ -1,11 +1,7 @@
 package com.caicongyang.stock.controllers;
 
 import com.caicongyang.core.basic.Result;
-import com.caicongyang.stock.domain.BreakthroughPlatformStock;
-import com.caicongyang.stock.domain.TStockHigherDTO;
-import com.caicongyang.stock.domain.TTransactionCounterStockDTO;
-import com.caicongyang.stock.domain.TTransactionStockDTO;
-import com.caicongyang.stock.domain.VolumeGtYesterdayStockDTO;
+import com.caicongyang.stock.domain.*;
 import com.caicongyang.stock.mapper.CommonMapper;
 import com.caicongyang.stock.service.ITStockMainService;
 import com.caicongyang.stock.service.ITStockService;
@@ -16,10 +12,12 @@ import io.swagger.annotations.ApiOperation;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Resource;
 
+import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,11 +84,11 @@ public class StockController {
     @ApiOperation(value = "查询当天的股票异动数据", notes = "查询当天的股票异动数据")
     @Cacheable(value = "getTransactionStockData", key = "#currentDate")
     public @ResponseBody
-    Result<List<TTransactionStockDTO>> getTransactionStockData(
+    Result<List<TVolumeIncreaseDTO>> getTransactionStockData(
             @RequestParam(required = false, value = "currentDate") String currentDate)
             throws Exception {
 
-        List<TTransactionStockDTO> result = null;
+        List<TVolumeIncreaseDTO> result = null;
         try {
             result = stockService.getTransactionStockData(currentDate);
             return Result.ok(result);
@@ -102,14 +100,14 @@ public class StockController {
     }
 
     @GetMapping("/getTransactionAndClose2TenDayAvgStockData")
-    @ApiOperation(value = "查询当天的股票异动&数据", notes = "查询当天的股票异动数据")
+    @ApiOperation(value = "查询股票异动回调到10日均线", notes = "查询股票异动回调到10日均线")
     @Cacheable(value = "getTransactionAndClose2TenDayAvgStockData", key = "#currentDate")
     public @ResponseBody
-    Result<List<TTransactionStockDTO>> getTransactionAndClose2TenDayAvgStockData(
+    Result<List<TVolumeIncreaseDTO>> getTransactionAndClose2TenDayAvgStockData(
             @RequestParam(required = false, value = "currentDate") String currentDate)
             throws Exception {
 
-        List<TTransactionStockDTO> result = null;
+        List<TVolumeIncreaseDTO> result = null;
         try {
             result = stockService.getTransactionAndClose2TenDayAvgStockData(currentDate);
             return Result.ok(result);
@@ -125,32 +123,28 @@ public class StockController {
     @ApiOperation(value = "查询时间间隔的股票异动数据", notes = "查询时间间隔内的股票异动数据")
     @Cacheable(value = "getIntervalTransactionStockData", key = "#startDate+ '_' +#endDate")
     public @ResponseBody
-    Result<List<TTransactionCounterStockDTO>> getIntervalTransactionStockData(
+    Result<List<IntervalTransactionStockDTO>> getIntervalTransactionStockData(
             @RequestParam(required = false, value = "startDate") String startDate,
             @RequestParam(required = false, value = "endDate") String endDate) throws Exception {
-        List<TTransactionCounterStockDTO> result = new ArrayList<>();
+        List<IntervalTransactionStockDTO> result = new ArrayList<>();
         try {
             List<Map<String, Object>> queryResult = stockService.getIntervalTransactionStockData(startDate, endDate);
             if (CollectionUtils.isEmpty(queryResult)) {
                 return Result.ok(null);
             } else {
                 for (Map<String, Object> map : queryResult) {
-                    TTransactionCounterStockDTO stock = new TTransactionCounterStockDTO();
+                    IntervalTransactionStockDTO stock = new IntervalTransactionStockDTO();
                     stock.setCounter((Long) map.getOrDefault("counter", null));
                     stock.setStockCode((String) map.getOrDefault("stock_code", ""));
-                    stock.setJqL2((String) map.getOrDefault("jq_l2", ""));
-                    stock.setSwL3((String) map.getOrDefault("sw_l3", ""));
-                    stock.setZjw((String) map.getOrDefault("zjw", ""));
-                    stock.setTradingDay((String) map.getOrDefault("trading_day", ""));
-//                    stock.setStockName(
-//                        itStockMainService.getStockNameByStockCode(stock.getStockCode()));
-                    stock.setGain((Double) map.getOrDefault("gain", 0d));
+                    stock.setStockName((String) map.getOrDefault("stock_name", ""));
+                    stock.setIndustryName((String) map.getOrDefault("industry_name", ""));
+                    stock.setTradeDate((Date) map.get("trade_date"));
                     result.add(stock);
                 }
                 return Result.ok(result);
             }
         } catch (Exception e) {
-            logger.error("查询当天的股票异动数据失败", e);
+            logger.error("查询时间间隔的股票异动数据失败", e);
             e.printStackTrace();
             return Result.fail(e);
         }

@@ -1,6 +1,8 @@
 package com.caicongyang.stock.service;
 
 import com.caicongyang.stock.domain.TTransactionStockDTO;
+import com.caicongyang.stock.domain.TVolumeIncrease;
+import com.caicongyang.stock.domain.TVolumeIncreaseDTO;
 
 import java.text.ParseException;
 import java.util.List;
@@ -31,7 +33,7 @@ public interface StockService {
      * 获取当天的异动股票数据
      * *
      */
-    List<TTransactionStockDTO> getTransactionStockData(String currentDate) throws Exception;
+    List<TVolumeIncreaseDTO> getTransactionStockData(String currentDate) throws Exception;
 
     /**
      * 查询时间间隔的股票异动数据
@@ -43,7 +45,7 @@ public interface StockService {
     List<Map<String, Object>> getIntervalTransactionStockData(String startDate, String endDate);
 
 
-    List<TTransactionStockDTO> getTransactionAndClose2TenDayAvgStockData(String currentDate);
+    List<TVolumeIncreaseDTO> getTransactionAndClose2TenDayAvgStockData(String currentDate);
 
 
     /**

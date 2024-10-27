@@ -2,6 +2,8 @@ package com.caicongyang.stock.mapper;
 
 
 import com.caicongyang.stock.domain.TTransactionStockDTO;
+import com.caicongyang.stock.domain.TVolumeIncreaseDTO;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.HashMap;
 import java.util.List;
@@ -43,6 +45,7 @@ public interface CommonMapper {
 
     List<Map<String, Object>> getVolumeGtYesterdayStock(HashMap<String, String> map);
 
-    List<TTransactionStockDTO> getTransactionAndClose2TenDayAvgStockData(String currentDate);
-}
+    List<TVolumeIncreaseDTO> getTransactionAndClose2TenDayAvgStockData(String currentDate);
 
+    List<TVolumeIncreaseDTO> getTransactionStockDataWithIndustry(@Param("currentDate") String currentDate);
+}

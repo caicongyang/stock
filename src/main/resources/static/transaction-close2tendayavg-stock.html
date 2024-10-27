@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>tom.cai选股助手之异动ETF低于10日均线</title>
+    <title>tom.cai选股助手之异动股票低于10日均线</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -22,16 +22,16 @@
 
         <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable">
             <thead>
-
             <tr>
-                <!--                "lastDayCompare": 2.4818,
-            "meanRatio": 2.0043,
-            "tradingDay": "2024-10-18",-->
-                <th data-priority="1">ETF代码</th>
-                <th data-priority="2">ETF名称</th>
-                <th data-priority="3">lastDayCompare</th>
-                <th data-priority="4">meanRatio</th>
-                <th data-priority="5">tradingDay</th>
+                <th data-priority="1">股票代码</th>
+                <th data-priority="2">股票名称</th>
+                <th data-priority="3">行业名称</th>
+                <th data-priority="4">成交量增加比率</th>
+                <th data-priority="5">收盘价</th>
+                <th data-priority="6">开盘价</th>
+                <th data-priority="7">最高价</th>
+                <th data-priority="8">最低价</th>
+                <th data-priority="9">交易日期</th>
             </tr>
             </thead>
             <tbody id="tbodydata">
@@ -49,7 +49,6 @@
         getTransactionAndClose2TenDayAvgStockData();
     });
 
-
     function getTransactionAndClose2TenDayAvgStockData() {
         var dayStr = GetQueryValue('day');
         if (dayStr == null || dayStr == undefined || dayStr == '') {
@@ -57,7 +56,7 @@
             day.setTime(day.getTime());
             dayStr = day.getFullYear() + "-" + (day.getMonth() + 1) + "-" + day.getDate();
         }
-        $.get("/stock/getTransactionStockData",
+        $.get("/stock/getTransactionAndClose2TenDayAvgStockData",
             {
                 currentDate: dayStr
             },
@@ -67,16 +66,20 @@
                     var html = "";
                     if (optionJson.length > 0) {
                         for (var i = 0; i < optionJson.length; i++) {
-                            var url = "https://m.10jqka.com.cn/stockpage/hs_" + optionJson[i].stockCode.split(".")[0] + "/#&atab=geguNews";
+                            var url = "https://m.10jqka.com.cn/stockpage/hs_" + optionJson[i].stockCode + "/#&atab=geguNews";
                             html += "<tr>";
                             html += "<td><a href='" + url + "' target='_blank'>" + optionJson[i].stockCode + "</a></td>";
                             html += "<td>" + optionJson[i].stockName + "</td>";
-                            html += "<td>" + optionJson[i].lastDayCompare + "</td>";
-                            html += "<td>" + optionJson[i].meanRatio + "</td>";
-                            html += "<td>" + optionJson[i].tradingDay + "</td>";
+                            html += "<td>" + (optionJson[i].industryName || '未分类') + "</td>";
+                            html += "<td>" + optionJson[i].volumeIncreaseRatio.toFixed(2) + "</td>";
+                            html += "<td>" + optionJson[i].close.toFixed(2) + "</td>";
+                            html += "<td>" + optionJson[i].open.toFixed(2) + "</td>";
+                            html += "<td>" + optionJson[i].high.toFixed(2) + "</td>";
+                            html += "<td>" + optionJson[i].low.toFixed(2) + "</td>";
+                            html += "<td>" + optionJson[i].tradeDate + "</td>";
                             html += "</tr>";
                         }
-                        $("#titleData").text(optionJson[0].tradingDay + "异动股票");
+                        $("#titleData").text(dayStr + "异动股票低于10日均线");
                     }
                     $("#tbodydata").html(html);
                 } else {
@@ -87,7 +90,7 @@
 
     function query() {
         var queryDate = $("#queryDate").val();
-        window.parent.location.href = "secend.html?page=abnormal-stock.html&day=" + queryDate;
+        window.parent.location.href = "secend.html?page=transaction-close2tendayavg-stock.html&day=" + queryDate;
     }
 
     function GetQueryValue(queryName) {

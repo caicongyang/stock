@@ -1,7 +1,7 @@
-package com.caicongyang.service;
+package com.caicongyang.stock.service.impl;
 
-import com.caicongyang.domain.TVolumeIncrease;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.caicongyang.stock.domain.TVolumeIncrease;
 
 /**
  * <p>
@@ -12,5 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2024-10-27
  */
 public interface ITVolumeIncreaseService extends IService<TVolumeIncrease> {
-
+    // 可以添加自定义的业务方法
 }
