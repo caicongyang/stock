@@ -30,7 +30,7 @@ public class TStockLimit implements Serializable {
 
     private String stockCode;
 
-    private Date tradingDay;
+    private Date tradeDate;
 
     @ApiModelProperty(value = "涨幅")
     private Double gain;

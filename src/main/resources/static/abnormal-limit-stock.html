@@ -24,9 +24,9 @@
             <tr>
                 <th data-priority="1">股票代码</th>
                 <th data-priority="2">股票名称</th>
-                <th data-priority="3">异动日期</th>
-                <th data-priority="4">涨停日期</th>
-                <th data-priority="5">其他信息</th>
+                <th data-priority="3">异动比率</th>
+                <th data-priority="3">行业信息</th>
+                <th data-priority="4">涨停次数</th>
             </tr>
             </thead>
             <tbody id="tbodydata">
@@ -51,7 +51,7 @@
             day.setTime(day.getTime());
             dayStr = day.getFullYear() + "-" + (day.getMonth() + 1) + "-" + day.getDate();
         }
-        $.get("/stock/getAbnormalLimitStock",
+        $.get("/t-stock-limit/getTransactionStockStockAndLimit",
             {
                 currentDate: dayStr
             },
@@ -65,9 +65,9 @@
                             html += "<tr>";
                             html += "<td><a href='" + url + "' target='_blank'>" + optionJson[i].stockCode.split(".")[0] + "</a></td>";
                             html += "<td>" + optionJson[i].stockName + "</td>";
-                            html += "<td>" + optionJson[i].abnormalDate + "</td>";
-                            html += "<td>" + optionJson[i].limitDate + "</td>";
-                            html += "<td>" + optionJson[i].otherInfo + "</td>";
+                            html += "<td>" + optionJson[i].volumeIncreaseRatio + "</td>";
+                            html += "<td>" + optionJson[i].industryName + "</td>";
+                            html += "<td>" + optionJson[i].counter + "</td>";
                             html += "</tr>";
                         }
                         $("#titleData").text(dayStr + "当日异动&30日内涨停股票");

@@ -4,29 +4,24 @@ import io.swagger.annotations.ApiModel;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
-@ApiModel(value="异动&30日内涨停对象", description="")
+@ApiModel(value = "异动&30日内涨停对象", description = "")
 public class TransactionAndLimitStockDTO implements Serializable {
 
     private String stockCode;
 
-    private LocalDate tradingDay;
+    private Date tradeDate;
 
-    private Double lastDayCompare;
+    private Double volumeIncreaseRatio;
 
-    private Double meanRatio;
-
-    private Double gain;
 
     private String stockName;
 
-    private String swL3;
-
-    private String jqL2;
-
-    private String zjw;
 
     private Integer counter;
+
+    private  String industryName;
 
 
     public String getStockCode() {
@@ -37,12 +32,20 @@ public class TransactionAndLimitStockDTO implements Serializable {
         this.stockCode = stockCode;
     }
 
-    public LocalDate getTradingDay() {
-        return tradingDay;
+    public Date getTradeDate() {
+        return tradeDate;
     }
 
-    public void setTradingDay(LocalDate tradingDay) {
-        this.tradingDay = tradingDay;
+    public void setTradeDate(Date tradeDate) {
+        this.tradeDate = tradeDate;
+    }
+
+    public Double getVolumeIncreaseRatio() {
+        return volumeIncreaseRatio;
+    }
+
+    public void setVolumeIncreaseRatio(Double volumeIncreaseRatio) {
+        this.volumeIncreaseRatio = volumeIncreaseRatio;
     }
 
     public String getStockName() {
@@ -53,30 +56,6 @@ public class TransactionAndLimitStockDTO implements Serializable {
         this.stockName = stockName;
     }
 
-    public String getSwL3() {
-        return swL3;
-    }
-
-    public void setSwL3(String swL3) {
-        this.swL3 = swL3;
-    }
-
-    public String getJqL2() {
-        return jqL2;
-    }
-
-    public void setJqL2(String jqL2) {
-        this.jqL2 = jqL2;
-    }
-
-    public String getZjw() {
-        return zjw;
-    }
-
-    public void setZjw(String zjw) {
-        this.zjw = zjw;
-    }
-
     public Integer getCounter() {
         return counter;
     }
@@ -85,27 +64,12 @@ public class TransactionAndLimitStockDTO implements Serializable {
         this.counter = counter;
     }
 
-    public Double getLastDayCompare() {
-        return lastDayCompare;
+
+    public String getIndustryName() {
+        return industryName;
     }
 
-    public void setLastDayCompare(Double lastDayCompare) {
-        this.lastDayCompare = lastDayCompare;
-    }
-
-    public Double getMeanRatio() {
-        return meanRatio;
-    }
-
-    public void setMeanRatio(Double meanRatio) {
-        this.meanRatio = meanRatio;
-    }
-
-    public Double getGain() {
-        return gain;
-    }
-
-    public void setGain(Double gain) {
-        this.gain = gain;
+    public void setIndustryName(String industryName) {
+        this.industryName = industryName;
     }
 }

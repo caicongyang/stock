@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>tom.cai选股助手之总策略</title>
+    <title>tom.cai选股助手之异动股票低于10日均线</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
-<div data-role="page" id="Strategy">
+<div data-role="page" id="transaction-close2tendayavg-stock">
     <div data-role="header">
         <h1 id="titleData"></h1>
     </div>
@@ -16,15 +19,19 @@
             <input type="text" id="queryDate">
             <input type="button" data-inline="true" value="查询" onclick="query()">
         </div>
+
         <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable">
             <thead>
             <tr>
-                <th data-priority="1">股票</th>
-                <th data-priority="2">名称</th>
-                <th data-priority="3">策略</th>
-                <th data-priority="4">swL3</th>
-                <th data-priority="5">jqL2</th>
-                <th data-priority="6">zjw</th>
+                <th data-priority="1">股票代码</th>
+                <th data-priority="2">股票名称</th>
+                <th data-priority="3">行业名称</th>
+                <th data-priority="4">成交量增加比率</th>
+                <th data-priority="5">收盘价</th>
+                <th data-priority="6">开盘价</th>
+                <th data-priority="7">最高价</th>
+                <th data-priority="8">最低价</th>
+                <th data-priority="9">交易日期</th>
             </tr>
             </thead>
             <tbody id="tbodydata">
@@ -38,18 +45,18 @@
 </div>
 
 <script>
-    $(document).on("pagecreate", "#Strategy", function() {
-        loadStrategyData();
+    $(document).on("pagecreate", "#transaction-close2tendayavg-stock", function() {
+        getTransactionAndClose2TenDayAvgStockData();
     });
 
-    function loadStrategyData() {
+    function getTransactionAndClose2TenDayAvgStockData() {
         var dayStr = GetQueryValue('day');
         if (dayStr == null || dayStr == undefined || dayStr == '') {
             var day = new Date();
             day.setTime(day.getTime());
             dayStr = day.getFullYear() + "-" + (day.getMonth() + 1) + "-" + day.getDate();
         }
-        $.get("/stock/getStrategyStock",
+        $.get("/stock/getTransactionAndClose2TenDayAvgStockData",
             {
                 currentDate: dayStr
             },
@@ -59,17 +66,20 @@
                     var html = "";
                     if (optionJson.length > 0) {
                         for (var i = 0; i < optionJson.length; i++) {
-                            var url = "https://m.10jqka.com.cn/stockpage/hs_" + optionJson[i].stockCode.split(".")[0] + "/#&atab=geguNews";
+                            var url = "https://m.10jqka.com.cn/stockpage/hs_" + optionJson[i].stockCode + "/#&atab=geguNews";
                             html += "<tr>";
-                            html += "<td><a href='" + url + "' target='_blank'>" + optionJson[i].stockCode.split(".")[0] + "</a></td>";
+                            html += "<td><a href='" + url + "' target='_blank'>" + optionJson[i].stockCode + "</a></td>";
                             html += "<td>" + optionJson[i].stockName + "</td>";
-                            html += "<td>" + optionJson[i].strategy + "</td>";
-                            html += "<td>" + optionJson[i].swL3 + "</td>";
-                            html += "<td>" + optionJson[i].jqL2 + "</td>";
-                            html += "<td>" + optionJson[i].zjw + "</td>";
+                            html += "<td>" + (optionJson[i].industryName || '未分类') + "</td>";
+                            html += "<td>" + optionJson[i].volumeIncreaseRatio.toFixed(2) + "</td>";
+                            html += "<td>" + optionJson[i].close.toFixed(2) + "</td>";
+                            html += "<td>" + optionJson[i].open.toFixed(2) + "</td>";
+                            html += "<td>" + optionJson[i].high.toFixed(2) + "</td>";
+                            html += "<td>" + optionJson[i].low.toFixed(2) + "</td>";
+                            html += "<td>" + optionJson[i].tradeDate + "</td>";
                             html += "</tr>";
                         }
-                        $("#titleData").text(optionJson[0].tradingDay + "总策略");
+                        $("#titleData").text(dayStr + "异动股票低于10日均线");
                     }
                     $("#tbodydata").html(html);
                 } else {
@@ -80,7 +90,7 @@
 
     function query() {
         var queryDate = $("#queryDate").val();
-        window.parent.location.href = "secend.html?page=Strategy.html&day=" + queryDate;
+        window.parent.location.href = "secend.html?page=transaction-close2tendayavg-stock.html&day=" + queryDate;
     }
 
     function GetQueryValue(queryName) {

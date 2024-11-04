@@ -25,12 +25,9 @@ public class TStockLimitDTO extends TStockLimit implements Serializable {
 
     private String stockName;
 
-    private String swL3;
-
-    private String jqL2;
-
-    private String zjw;
 
     private Integer counter;
+
+    private String industryName;
 
 }

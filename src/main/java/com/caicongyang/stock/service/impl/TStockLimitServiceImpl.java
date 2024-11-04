@@ -54,13 +54,13 @@ public class TStockLimitServiceImpl extends ServiceImpl<TStockLimitMapper, TStoc
     TStockLimitMapper limitMapper;
 
 
-    public void catchAllDaliyLimitStock(String tradingDay) throws Exception {
+    public void catchAllDaliyLimitStock(String tradeDay) throws Exception {
 
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    doCtchAllDaliyLimitStock(tradingDay);
+                    doCtchAllDaliyLimitStock(tradeDay);
                 } catch (Exception e) {
                     logger.error("执行失败", e);
                 }
@@ -70,18 +70,18 @@ public class TStockLimitServiceImpl extends ServiceImpl<TStockLimitMapper, TStoc
 
     }
 
-    private void doCtchAllDaliyLimitStock(String tradingDay) throws ParseException {
-        Date date = TomDateUtil.formateDayPattern2Date(tradingDay);
+    private void doCtchAllDaliyLimitStock(String tradeDay) throws ParseException {
+        Date date = TomDateUtil.formateDayPattern2Date(tradeDay);
 
         List<TStock> list = tStockService.list(new LambdaQueryWrapper<TStock>().eq(TStock::getTradeDate, date));
         List<TStockLimit> insertList = new ArrayList<>();
         for (TStock stock : list) {
-            double currentGain =stock.getPctChg();
+            double currentGain = stock.getPctChg();
             if (currentGain >= 9.5) {
                 TStockLimit limit = new TStockLimit();
                 limit.setStockCode(stock.getStockCode());
                 limit.setGain(currentGain);
-                limit.setTradingDay(date);
+                limit.setTradeDate(date);
                 insertList.add(limit);
             }
         }
@@ -129,7 +129,7 @@ public class TStockLimitServiceImpl extends ServiceImpl<TStockLimitMapper, TStoc
                 .comparing(TStockLimitDTO::getCounter, Comparator.nullsLast(Comparator.reverseOrder())));
 
         Comparator<TStockLimitDTO> tradingDay = Comparator.nullsLast(Comparator
-                .comparing(TStockLimitDTO::getTradingDay, Comparator.nullsLast(Comparator.reverseOrder())));
+                .comparing(TStockLimitDTO::getTradeDate, Comparator.nullsLast(Comparator.reverseOrder())));
 
 
         // 联合排序
@@ -159,36 +159,8 @@ public class TStockLimitServiceImpl extends ServiceImpl<TStockLimitMapper, TStoc
 
         List<TStockLimitDTO> limitList = limitMapper.getLimitAndTransactionStock(map);
 
-        List<TStockLimitDTO> reList = new LinkedList<>();
+        return limitList;
 
-
-        for (TStockLimitDTO item : limitList) {
-            TStockLimitDTO dto = new TStockLimitDTO();
-//            TStockMain tStockMain = itStockMainService.getIndustryByStockCode(item.getStockCode());
-//            BeanUtils.copyProperties(tStockMain, dto, getNullPropertyNames(tStockMain));
-            BeanUtils.copyProperties(item, dto, getNullPropertyNames(item));
-            dto.setTradingDay( TomDateUtil.formateDayPattern2Date(lastTradingDate));
-            reList.add(dto);
-        }
-
-
-        //java8 联合排序
-
-        Comparator<TStockLimitDTO> byJqL2 = Comparator.nullsLast(Comparator
-                .comparing(TStockLimitDTO::getJqL2, Comparator.nullsLast(Comparator.naturalOrder())));
-
-        Comparator<TStockLimitDTO> bySwL3 = Comparator.nullsLast(Comparator
-                .comparing(TStockLimitDTO::getSwL3, Comparator.nullsLast(Comparator.naturalOrder())));
-
-        Comparator<TStockLimitDTO> byZjw = Comparator.nullsLast(Comparator
-                .comparing(TStockLimitDTO::getZjw, Comparator.nullsLast(Comparator.naturalOrder())));
-
-        // 联合排序
-        Comparator<TStockLimitDTO> finalComparator = Comparator
-                .nullsLast(byJqL2.thenComparing(bySwL3).thenComparing(byZjw));
-
-        return reList.stream().sorted(finalComparator)
-                .collect(Collectors.toList());
 
     }
 
@@ -210,32 +182,7 @@ public class TStockLimitServiceImpl extends ServiceImpl<TStockLimitMapper, TStoc
 
         List<TransactionAndLimitStockDTO> limitList = limitMapper.getTransactionAndLimitStock(map);
 
-
-        for (TransactionAndLimitStockDTO item : limitList) {
-//            TStockMain tStockMain = itStockMainService.getIndustryByStockCode(item.getStockCode());
-//            BeanUtils.copyProperties(tStockMain, item, getNullPropertyNames(tStockMain));
-            item.setTradingDay(TomDateUtil.date2LocalDate(TomDateUtil.formateDayPattern2Date(lastTradingDate)));
-
-        }
-
-
-        //java8 联合排序
-
-        Comparator<TransactionAndLimitStockDTO> byJqL2 = Comparator.nullsLast(Comparator
-                .comparing(TransactionAndLimitStockDTO::getJqL2, Comparator.nullsLast(Comparator.naturalOrder())));
-
-        Comparator<TransactionAndLimitStockDTO> bySwL3 = Comparator.nullsLast(Comparator
-                .comparing(TransactionAndLimitStockDTO::getSwL3, Comparator.nullsLast(Comparator.naturalOrder())));
-
-        Comparator<TransactionAndLimitStockDTO> byZjw = Comparator.nullsLast(Comparator
-                .comparing(TransactionAndLimitStockDTO::getZjw, Comparator.nullsLast(Comparator.naturalOrder())));
-
-        // 联合排序
-        Comparator<TransactionAndLimitStockDTO> finalComparator = Comparator
-                .nullsLast(byJqL2.thenComparing(bySwL3).thenComparing(byZjw));
-
-        return limitList.stream().sorted(finalComparator)
-                .collect(Collectors.toList());
+        return limitList;
     }
 
 
