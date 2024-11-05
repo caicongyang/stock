@@ -5,11 +5,13 @@
 
     <select id="getIntervalLimitStockData"  parameterType="java.util.HashMap" resultType="com.caicongyang.stock.domain.TStockLimitDTO">
         SELECT
-            stock_code  as stockCode,
-            max( trade_date )  as tradeDate,
-            count( * ) as counter
+            s.stock_code  as stockCode,
+            s.max( trade_date )  as tradeDate,
+            count( s.* ) as counter,
+            r.industry_name as industry_name
         FROM
-            T_Stock_Limit
+            t_stock_Limit s
+        left join t_industry_stock r on   s.stock_code = r.stock_code
         where  trade_date between  #{startDate}
         and #{endDate}
         GROUP BY
@@ -40,7 +42,7 @@
         ORDER BY counter desc
         ) as r
         left join t_industry_stock s on   s.stock_code = r.stock_code
-
+        order by s.industry_name
     </select>
 
 
@@ -68,5 +70,6 @@
         counter DESC
         ) AS r
         LEFT JOIN t_industry_stock s ON s.stock_code = r.stock_code
+        order by s.industry_name
     </select>
 </mapper>

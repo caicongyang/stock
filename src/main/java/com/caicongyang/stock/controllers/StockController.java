@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import javax.annotation.Resource;
 
 import lombok.Data;
@@ -141,7 +142,9 @@ public class StockController {
                     stock.setTradeDate((Date) map.get("trade_date"));
                     result.add(stock);
                 }
-                return Result.ok(result);
+
+                List<IntervalTransactionStockDTO> collect = result.stream().filter(a -> !a.getStockCode().startsWith("8")).collect(Collectors.toList());
+                return Result.ok(collect);
             }
         } catch (Exception e) {
             logger.error("查询时间间隔的股票异动数据失败", e);

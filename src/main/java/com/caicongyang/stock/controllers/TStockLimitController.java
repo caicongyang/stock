@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -43,8 +44,9 @@ public class TStockLimitController {
     Result<List<TStockLimitDTO>> getIntervalLimitStockData(@RequestParam(required = false, value = "startDate") String startDate,
                                                            @RequestParam(required = false, value = "endDate") String endDate)
             throws Exception {
-        return Result.ok(limitService.getIntervalLimitStockData(startDate, endDate));
-
+        List<TStockLimitDTO> intervalLimitStockData = limitService.getIntervalLimitStockData(startDate, endDate);
+        List<TStockLimitDTO> collect = intervalLimitStockData.stream().filter(a -> !a.getStockCode().startsWith("8")).collect(Collectors.toList());
+        return Result.ok(collect);
     }
 
 
@@ -53,8 +55,9 @@ public class TStockLimitController {
     public @ResponseBody
     Result<List<TStockLimitDTO>> getLimitAndTransactionStockStock(@RequestParam(value = "currentDate") String currentDate)
             throws Exception {
-        return Result.ok(limitService.getLimitAndTransactionStockStock(currentDate));
-
+        List<TStockLimitDTO> limitAndTransactionStockStock = limitService.getLimitAndTransactionStockStock(currentDate);
+        List<TStockLimitDTO> collect = limitAndTransactionStockStock.stream().filter(a -> !a.getStockCode().startsWith("8")).collect(Collectors.toList());
+        return Result.ok(collect);
     }
 
 
@@ -63,7 +66,9 @@ public class TStockLimitController {
     public @ResponseBody
     Result<List<TransactionAndLimitStockDTO>> getTransactionStockStockAndLimit(@RequestParam(value = "currentDate") String currentDate)
             throws Exception {
-        return Result.ok(limitService.getTransactionStockStockAndLimit(currentDate));
+        List<TransactionAndLimitStockDTO> transactionStockStockAndLimit = limitService.getTransactionStockStockAndLimit(currentDate);
+        List<TransactionAndLimitStockDTO> collect = transactionStockStockAndLimit.stream().filter(a -> !a.getStockCode().startsWith("8")).collect(Collectors.toList());
+        return Result.ok(collect);
 
     }
 

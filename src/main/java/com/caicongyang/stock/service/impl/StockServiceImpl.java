@@ -23,6 +23,7 @@ import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -163,7 +164,9 @@ public class StockServiceImpl implements StockService {
             }
         }
 
-        return result;
+        List<TVolumeIncreaseDTO> collect = result.stream().filter(a -> !a.getStockCode().startsWith("8")).collect(Collectors.toList());
+
+        return collect;
     }
 
 
@@ -183,7 +186,8 @@ public class StockServiceImpl implements StockService {
             String lastTradingDate = commonMapper.queryLastTradingDate();
             result = commonMapper.getTransactionAndClose2TenDayAvgStockData(lastTradingDate);
         }
-        return  result;
+        List<TVolumeIncreaseDTO> collect = result.stream().filter(a -> !a.getStockCode().startsWith("8")).collect(Collectors.toList());
+        return  collect;
     }
 
 
