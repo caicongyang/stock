@@ -3,54 +3,66 @@
 <mapper namespace="com.caicongyang.stock.mapper.TStockLimitMapper">
 
 
-    <select id="getIntervalLimitStockData"  parameterType="java.util.HashMap" resultType="com.caicongyang.stock.domain.TStockLimitDTO">
+    <select id="getIntervalLimitStockData" parameterType="java.util.HashMap"
+            resultType="com.caicongyang.stock.domain.TStockLimitDTO">
         SELECT
-            s.stock_code  as stockCode,
-            s.max( trade_date )  as tradeDate,
-            count( s.* ) as counter,
-            r.industry_name as industry_name
+        s.stock_code AS stockCode,
+        MAX(s.trade_date) AS tradeDate,
+        COUNT(*) AS counter,
+        r.industry_name AS industry_name
         FROM
-            t_stock_Limit s
-        left join t_industry_stock r on   s.stock_code = r.stock_code
-        where  trade_date between  #{startDate}
+        t_stock_Limit s
+        LEFT JOIN
+        t_industry_stock r
+        ON
+        s.stock_code = r.stock_code
+        WHERE
+        s.trade_date BETWEEN #{startDate}
         and #{endDate}
         GROUP BY
-            stock_code
+        s.stock_code, r.industry_name
         HAVING
-            counter > 1
+        counter > 1
         ORDER BY
-            counter DESC,
-            max( trade_date ) desc
+        MAX(s.trade_date) DESC,
+        counter DESC;
     </select>
 
 
-    <select id="getLimitAndTransactionStock"  parameterType="java.util.HashMap"   resultType="com.caicongyang.stock.domain.TStockLimitDTO">
+    <select id="getLimitAndTransactionStock" parameterType="java.util.HashMap"
+            resultType="com.caicongyang.stock.domain.TStockLimitDTO">
 
-       select DISTINCT r.* ,s.stock_name , s.industry_name  from (
+        select DISTINCT r.* ,s.stock_name , s.industry_name, ra.main_net_inflow_3d as mainNetInflow3d,
+        t.fund_flow as fundFlow ,t.turnover_rate  as turnoverRate from (
         SELECT
-            t.stock_code,
-            count(t.id) AS counter
+        t.stock_code,
+        count(t.id) AS counter
         FROM
-            t_stock_limit AS l
-            JOIN t_volume_increase AS t ON l.stock_code = t.stock_code
+        t_stock_limit AS l
+        JOIN t_volume_increase AS t ON l.stock_code = t.stock_code
         WHERE
-            l.trade_date = #{currentDate}
-          AND t.trade_date BETWEEN #{startDate}
-            AND #{endDate}
+        l.trade_date = #{currentDate}
+        AND t.trade_date BETWEEN #{startDate}
+        AND #{endDate}
         GROUP BY
-            t.stock_code
+        t.stock_code
         ORDER BY counter desc
         ) as r
-        left join t_industry_stock s on   s.stock_code = r.stock_code
+        left join t_industry_stock s on s.stock_code = r.stock_code
+        left join t_stock_fund_flow_rank  ra on r.stock_code = ra.stock_code
+        left join t_stock_fund_flow_tsh  t on r.stock_code = t.stock_code
         order by s.industry_name
     </select>
 
 
-    <select id="getTransactionAndLimitStock" parameterType="java.util.HashMap"   resultType="com.caicongyang.stock.domain.TransactionAndLimitStockDTO">
+    <select id="getTransactionAndLimitStock" parameterType="java.util.HashMap"
+            resultType="com.caicongyang.stock.domain.TransactionAndLimitStockDTO">
         SELECT DISTINCT
         r.*,
         s.stock_name,
-        s.industry_name
+        s.industry_name,
+        ra.main_net_inflow_3d as mainNetInflow3d,
+        t.fund_flow as fundFlow ,t.turnover_rate  as turnoverRate
         FROM
         (
         SELECT
@@ -70,6 +82,8 @@
         counter DESC
         ) AS r
         LEFT JOIN t_industry_stock s ON s.stock_code = r.stock_code
+        left join t_stock_fund_flow_rank  ra on r.stock_code = ra.stock_code
+        left join t_stock_fund_flow_tsh  t on r.stock_code = t.stock_code
         order by s.industry_name
     </select>
 </mapper>

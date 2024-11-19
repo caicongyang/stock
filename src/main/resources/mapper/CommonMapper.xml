@@ -179,9 +179,13 @@ WHERE
 
 
     <select id="getTransactionStockDataWithIndustry" resultType="com.caicongyang.stock.domain.TVolumeIncreaseDTO">
-        SELECT v.*, i.industry_code, i.industry_name,i.stock_name
+        SELECT v.*, i.industry_code, i.industry_name,i.stock_name, r.main_net_inflow_3d as mainNetInflow3d,
+        t.fund_flow as fundFlow ,t.turnover_rate  as turnoverRate
         FROM t_volume_increase v
         LEFT JOIN t_industry_stock i ON v.stock_code = i.stock_code
+        left join t_stock_fund_flow_rank  r on v.stock_code = r.stock_code
+        left join t_stock_fund_flow_tsh  t on v.stock_code = t.stock_code
+
         WHERE v.trade_date = #{currentDate}
         ORDER BY COALESCE(i.industry_name, '未分类'), v.volume_increase_ratio DESC
     </select>

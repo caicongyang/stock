@@ -30,4 +30,11 @@ public class TStockLimitDTO extends TStockLimit implements Serializable {
 
     private String industryName;
 
+    //main_net_inflow_3d
+    private Double mainNetInflow3d;
+
+    private  String fundFlow;
+
+    private String turnoverRate;
+
 }

@@ -168,13 +168,13 @@ public class StockController {
     @Cacheable(value = "getHigherStock", key = "#tradingDay")
     public @ResponseBody
     Result<List<TStockHigherDTO>> getHigherStock(
-            @RequestParam(required = true, value = "tradingDay") String tradingDay)
+            @RequestParam(required = true, value = "currentDate") String tradingDay)
             throws ParseException, IOException {
         return Result.ok(itStockService.getHigherStock(tradingDay));
     }
 
 
-    @GetMapping("/get-breakthrough-platform")
+    @GetMapping("/getBreakthroughPlatform")
     @ApiOperation(value = "获取平台突破的股票", notes = "获取平台突破的股票")
     @Cacheable(value = "getBreakthroughPlatform", key = "#currentDate")
     public @ResponseBody

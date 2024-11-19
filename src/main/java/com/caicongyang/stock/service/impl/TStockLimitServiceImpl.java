@@ -93,8 +93,8 @@ public class TStockLimitServiceImpl extends ServiceImpl<TStockLimitMapper, TStoc
     public List<TStockLimitDTO> getIntervalLimitStockData(String startDate, String endDate) throws Exception {
 
 
-        LocalDate startLocalDate = TomDateUtil.date2LocalDate(TomDateUtil.formateDayPattern2Date(startDate));
-        LocalDate endLocalDate = TomDateUtil.date2LocalDate(TomDateUtil.formateDayPattern2Date(endDate));
+        Date startLocalDate = TomDateUtil.formateDayPattern2Date(startDate);
+        Date endLocalDate = TomDateUtil.formateDayPattern2Date(endDate);
 
 //        List<TStockLimit> limitList = this.list(new LambdaQueryWrapper<TStockLimit>().between(true, TStockLimit::getTradingDay, startLocalDate, endLocalDate));
 

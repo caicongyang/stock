@@ -23,6 +23,13 @@ public class TransactionAndLimitStockDTO implements Serializable {
 
     private  String industryName;
 
+    //main_net_inflow_3d
+    private Double mainNetInflow3d;
+
+    private  String fundFlow;
+
+    private String turnoverRate;
+
 
     public String getStockCode() {
         return stockCode;
@@ -71,5 +78,30 @@ public class TransactionAndLimitStockDTO implements Serializable {
 
     public void setIndustryName(String industryName) {
         this.industryName = industryName;
+    }
+
+
+    public Double getMainNetInflow3d() {
+        return mainNetInflow3d;
+    }
+
+    public void setMainNetInflow3d(Double mainNetInflow3d) {
+        this.mainNetInflow3d = mainNetInflow3d;
+    }
+
+    public String getTurnoverRate() {
+        return turnoverRate;
+    }
+
+    public void setTurnoverRate(String turnoverRate) {
+        this.turnoverRate = turnoverRate;
+    }
+
+    public String getFundFlow() {
+        return fundFlow;
+    }
+
+    public void setFundFlow(String fundFlow) {
+        this.fundFlow = fundFlow;
     }
 }
