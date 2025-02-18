@@ -38,3 +38,7 @@ $RECYCLE.BIN/
 *.jar
 /logs
 /.vscode
+
+
+.history
+.history/
