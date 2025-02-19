@@ -10,13 +10,6 @@ COPY settings.xml /root/.m2/settings.xml
 # 克隆并构建基础项目
 RUN git clone https://github.com/caicongyang/springbootDemo.git && \
     cd springbootDemo && \
-    # 删除子模块引用
-    sed -i '/module>stock/d' pom.xml && \
-    # 更新deprecated表达式
-    sed -i 's/${artifactId}/${project.artifactId}/g' pom.xml && \
-    sed -i 's/${version}/${project.version}/g' pom.xml && \
-    # 打印修改后的pom内容
-    cat pom.xml && \
     # 构建项目
     mvn clean install -DskipTests -Dmaven.test.skip=true
 
