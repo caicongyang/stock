@@ -30,9 +30,6 @@ docker run -d \
   --name $CONTAINER_NAME \
   -p $PORT:$PORT \
   -e SPRING_PROFILES_ACTIVE=prod \
-  -e SPRING_DATASOURCE_URL=jdbc:mysql://your-db-host:3333/stock \
-  -e SPRING_DATASOURCE_USERNAME=your-username \
-  -e SPRING_DATASOURCE_PASSWORD=your-password \
   $DOCKER_HUB_USERNAME/$IMAGE_NAME:$VERSION
 
 # 检查容器状态
