@@ -53,5 +53,8 @@ public class TEtf implements Serializable {
     @ApiModelProperty(value = "成交金额")
     private Double amount;
 
+    @ApiModelProperty(value = "涨停幅")
+    private Double pctChg;
+
 
 }

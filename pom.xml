@@ -12,6 +12,7 @@
     <groupId>com.caicongyang</groupId>
     <artifactId>stock</artifactId>
     <packaging>jar</packaging>
+    <version>0.0.1-SNAPSHOT</version>
 
 
     <dependencies>

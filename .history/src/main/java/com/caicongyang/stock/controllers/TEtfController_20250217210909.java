@@ -3,13 +3,10 @@ package com.caicongyang.stock.controllers;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.caicongyang.core.basic.Result;
-import com.caicongyang.stock.domain.TEtf;
 import com.caicongyang.stock.domain.TEtfHigherDTO;
 import com.caicongyang.stock.domain.TTransactionEtf;
 import com.caicongyang.stock.domain.TTransactionEtfDTO;
-import com.caicongyang.stock.mapper.CommonMapper;
 import com.caicongyang.stock.service.ITEtfService;
-import com.caicongyang.stock.utils.TomDateUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -44,9 +41,6 @@ public class TEtfController {
 
     @Autowired
     ITEtfService etfService;
-
-    @Autowired
-    private CommonMapper commonMapper;
 
 
     @GetMapping("/querySortEtfStockData")
@@ -125,7 +119,7 @@ public class TEtfController {
 
     @GetMapping("/getTopGainEtfs")
     @ApiOperation(value = "获取当日涨幅最大的20只ETF", notes = "按涨幅降序排序")
-    //@Cacheable(value = "getTopGainEtfs", key = "#tradeDate")
+    @Cacheable(value = "getTopGainEtfs", key = "#tradeDate")
     public @ResponseBody Result<List<TEtf>> getTopGainEtfs(
             @ApiParam("交易日期，格式：yyyy-MM-dd，不传则获取最近一个交易日数据")
             @RequestParam(required = false) String tradeDate) throws ParseException {
@@ -137,7 +131,7 @@ public class TEtfController {
             // 构建查询条件
             LambdaQueryWrapper<TEtf> queryWrapper = new LambdaQueryWrapper<>();
             queryWrapper.eq(TEtf::getTradeDate, TomDateUtil.formateDayPattern2Date(tradeDate))
-                    .orderByDesc(TEtf::getPctChg)  // 按涨幅降序
+                    .orderByDesc(TEtf::getGain)  // 按涨幅降序
                     .last("LIMIT 20");  // 限制返回20条记录
             
             return Result.ok(etfService.list(queryWrapper));
