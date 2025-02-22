@@ -19,21 +19,3 @@ docker tag $IMAGE_NAME:$VERSION $DOCKER_HUB_USERNAME/$IMAGE_NAME:$VERSION
 echo "推送镜像到Docker Hub..."
 docker push $DOCKER_HUB_USERNAME/$IMAGE_NAME:$VERSION
 
-# 停止并删除旧容器（如果存在）
-echo "清理旧容器..."
-docker stop $CONTAINER_NAME 2>/dev/null || true
-docker rm $CONTAINER_NAME 2>/dev/null || true
-
-# 运行新容器
-echo "启动新容器..."
-docker run -d \
-  --name $CONTAINER_NAME \
-  -p $PORT:$PORT \
-  -e SPRING_PROFILES_ACTIVE=prod \
-  $DOCKER_HUB_USERNAME/$IMAGE_NAME:$VERSION
-
-# 检查容器状态
-echo "检查容器状态..."
-docker ps | grep $CONTAINER_NAME
-
-echo "部署完成！" 
